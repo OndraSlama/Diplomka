@@ -1,0 +1,7686 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+   {-3.25ex\@plus -1ex \@minus -.2ex}%
+   {1.5ex \@plus .2ex}%
+   {\normalfont\normalsize\bfseries}}
+\end_preamble
+\use_default_options true
+\begin_modules
+algorithm2e
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language czech
+\language_package babel
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_title "Vzdušný hokej - strojové vidění a herní strategie"
+\pdf_author "Ondřej Sláma <ondra.slama1@gmail.cz>"
+\pdf_keywords "vzdušný hokej, detekce objektů, ui, strategie"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic true
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 3cm
+\rightmargin 1.5cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style german
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pdfbookmark[1]{Obálka}{obalka}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyhead[EL,OR]{Vysoké učení technické v Brně, FSI, Ústav automatizace
+ a informatiky}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyhead[ER,OL]{2019/20}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename titulka.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pdfbookmark[1]{Zadání}{zadani}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename zadani.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+<abstrakt>
+\end_layout
+
+\begin_layout Standard
+<abstrakt en>
+\end_layout
+
+\begin_layout Standard
+<klíčová slova>
+\end_layout
+
+\begin_layout Standard
+<klíčová slova en>
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+<citace>
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+<prohlášení>
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+<poděkování>
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pdfbookmark[1]{Obsah}{toc}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{fancy}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Úvod
+\end_layout
+
+\begin_layout Standard
+Oblíbená arkádová hra vzdušný hokej vznikla jako variace stolního hokeje
+ již v roce 1972.
+ Hra je určená pro dva hráče, kteří se pomocí speciálních hokejek snaží
+ trefit puk, pohybující se po herní desce do soupeřovi brány.
+ Díky ventilátorům tlačící vzduch z pod děrované desky se pod herním pukem
+ vytváří vzduchový polštář a puk se tak pohybuje téměř bez tření.
+ Napodobuje tím chování reálného puku na ledě.
+ Volný pohyb hokejky po polovině herní plochy a schopnost jakkoli odrážet
+ puk od bočních mantinelů dává možnost vzniku mnoha rozdílných pohledů na
+ strategii hry a docílit tak vstřelení gólu i pomocí nečekaných trajektorií.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Vzdušný hokej
+\end_layout
+
+\begin_layout Standard
+V postupu návrhu automatického hráče robotického vzdušného hokeje (dále
+ jen RVH) je důležité zakládat na již zavedených a standardizovaných vlastnostec
+h klasického AirHockey (česky vzdušný hokej) zobrazeného na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Profesionální-vzdušný-hokej"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Zejména pak z pohledu stylu hry je důležité, aby robotický hráč neporušoval
+ pravidla a byl i tak schopný herně konkurovat lidskému protihráči.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/table-fotball.png
+	lyxscale 60
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Profesionální-vzdušný-hokej"
+
+\end_inset
+
+Profesionální vzdušný hokej využívaný na turnajích 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-1"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Standardizace vzdušného hokeje
+\end_layout
+
+\begin_layout Standard
+V dnešní době lze nejen koupit množství rozdílných formátů stolu vzdušného
+ hokeje ale může se lišit i umístění branek, popis pravidel nebo styl hry.
+ Proto byly pro turnajové účely tyto parametry standardizovány.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Pravidla-hry"
+
+\end_inset
+
+Pravidla hry
+\end_layout
+
+\begin_layout Standard
+Pokaždé hrají dva hráči proti sobě na hrací ploše s jedním pukem a dvěma
+ hokejkami (viz obrázek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Standardní-hokejky-s"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ Tito hráči se mohou vyskytovat kdekoliv kolem stolu na své polovině ovšem
+ je zakázáno překročit na stranu k soupeřovi 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3"
+literal "false"
+
+\end_inset
+
+.
+ Volný pohyb hokejky je podobně jako pohyb hráče omezen pouze na polovinu
+ herní plochy, jakmile se ale puk dotýká středové čáry, může jej zasáhnout
+ kterýkoliv hráč 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3"
+literal "false"
+
+\end_inset
+
+.
+ Je zakázáno ovlivnit trajektorii puku jiným způsobem, nežli interakcí hokejky.
+ Hra začíná vhazováním, kdy je puk uvolněn rozhodčím ve středu hřiště, každé
+ další rozehrání pak začíná na straně stolu, na kterém byla naposledy inkasována
+ branka 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3"
+literal "false"
+
+\end_inset
+
+.
+ Puk se nesmí vyskytovat na jedné půlce hrací plochy déle než sedm sekund.
+ Pokud hráč nestihne vystřelit, propadá puk protivníkovi.
+ Hráč, který první vstřelí sedm gólů (bodů) ukončuje a vyhrává hru.
+ V některých případech lze hrát i do devíti bodů 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Rozměry
+\end_layout
+
+\begin_layout Standard
+Standardní rozměry turnajového stolu vzdušného hokeje odpovídají americkým
+ jednotkám v palcích: délka - 99 1/2“ (252.73 cm), šířka - 51 1/4
+\begin_inset Quotes grd
+\end_inset
+
+ (130.17 cm) a výška - 31
+\begin_inset Quotes grd
+\end_inset
+
+ (78.74 cm) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-2"
+literal "false"
+
+\end_inset
+
+.
+ Pro rozměry místnosti, ve které se hokej nachází, je pak doporučeno počítat
+ z každé strany stolu s alespoň metr širokým volným prostorem (viz obrázek
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Standardizované-rozměry-vzdušnéh"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-2"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/rozmery_stolu.png
+	lyxscale 50
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Standardizované-rozměry-vzdušnéh"
+
+\end_inset
+
+Standardizované rozměry vzdušného hokeje s doporučenými rozměry místnosti
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-2"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Ostatní parametry
+\end_layout
+
+\begin_layout Standard
+Ostatní parametry jako je velikost a váha puku nebo hokejky (viz obrázek
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Standardní-hokejky-s"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) pak nejsou definovány přesně a závisí na výrobci nebo na velikosti a výkonu
+ stolu, ke kterému jsou pořizovány.
+ Průměry puků se pohybují od 45 cm do 90 cm a mohou vážit až 42 gramů 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-10"
+literal "false"
+
+\end_inset
+
+.
+ Pro turnajové a profesionální účely se většinou používají puky větší a
+ těžší, zejména kvůli snížení rizika ztráty kontaktu puku s hrací plochou
+ při silnějších úderech 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-2"
+literal "false"
+
+\end_inset
+
+.
+ Váha hokejky není standardizována.
+ Těžší hokejky ale umožňují prudší údery, proto jsou často na turnajích
+ limitovány do 170 gramů nebo méně 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-10"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/hokejky_puk.png
+	lyxscale 50
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Standardní-hokejky-s"
+
+\end_inset
+
+Standardní hokejky s pukem pro stolní hru vzdušný hokej 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-11,key-12"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Styl-hry"
+
+\end_inset
+
+Styl hry
+\end_layout
+
+\begin_layout Standard
+Při návrhu a vývoji počítačové heuristiky, vyhodnocující akční zásah pro
+ daný stav systému, lze často s výhodou využít již zaběhlé a všeobecně známé
+ postupy využívané manuálně lidskou obsluhou.
+ Proto i pro návrh herní strategie RVH lze zakládat na osvědčených stylech
+ hry profesionálních hráčů.
+ Analýza nejčastějších obraných formací a útočných střel v zápasech turnajových
+ úrovní potom může sloužit jako odrazový můstek pro vývoj rozhodovacího
+ algoritmu.
+ Zajímavý může být i pohled na mnohdy instinktivní chování lidského těla
+ při rychlých změnách trajektorie puku a míra schopnosti rychle se pohybující
+ puk sledovat.
+ Pomocí těchto informací je pak možné najít slabá místa v obraně lidského
+ protihráče nebo naopak úspěšně ubránit často nebezpečné údery.
+\end_layout
+
+\begin_layout Subsubsection
+Obrana
+\end_layout
+
+\begin_layout Standard
+Základním opěrným bodem v silné strategii je spolehlivá obrana.
+ Ta vychází nejen z dobře kryté brankové oblasti, ale i schopnosti udržet
+ puk po zákroku na obranné polovině hrací plochy.
+ Profesionální hráči nejčastěji uplatňují tzv.
+ 
+\begin_inset Quotes gld
+\end_inset
+
+trojúhelníkovou obranu
+\begin_inset Quotes grd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-13"
+literal "false"
+
+\end_inset
+
+ znázorněnou na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Názorné-schéma-trojúhelníkové"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Výchozí poloha hokejky je v této formaci vysunutá poměrně daleko před brankovou
+ čárou a vykrývá tak střely mířené přímo na brankový otvor (1).
+ Při úderech protivníka s odrazem o boční mantinel bránící hráč zasune hokejku
+ ke kraji branky na straně odrazu (2).
+ Vykrývá tak bližší brankovou tyč.
+ V případě ostřejšího úhlu odrazu, a tedy útoku na vzdálenější tyč branky,
+ se hokejka posouvá směrem k bližší tyči jen částečně (3).
+ Hokejka by měla puk vyrazit směrem vodorovným s brankovou čárou a udržet
+ tak puk v obranné polovině 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-13"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/triangual_strategy.png
+	lyxscale 20
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Názorné-schéma-trojúhelníkové"
+
+\end_inset
+
+Znázornění trojúhelníkové obrany
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Při pomalejších střelách může bránící hráč zastavit puk tím, že malý okamžik
+ před střetem puku s hokejkou posune hokejku ve směru trajektorie střely
+ s plynulým zpomalením pohybu až do úplného zastavení 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-13"
+literal "false"
+
+\end_inset
+
+ (viz obrázek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Názorné-schéma-pohybu"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ Puk tak ztratí svoji kinetickou energii a bránící hráč může okamžitě zaútočit
+ bez nutnosti dalšího zpracování.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/puck_slowdown.png
+	lyxscale 20
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Názorné-schéma-pohybu"
+
+\end_inset
+
+Znázornění pohybu hokejky při zpracovávání pomalé střely
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Útok
+\end_layout
+
+\begin_layout Standard
+Způsob útoku na bránu soupeře lze rozdělit na základní typy střel:
+\end_layout
+
+\begin_layout Itemize
+Přímá střela na bránu (1)
+\end_layout
+
+\begin_layout Itemize
+Střela s odrazem od bočního mantinelu
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Střela k bližší tyči (2)
+\end_layout
+
+\begin_layout Itemize
+Střela k vzdálenější tyči (3)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+V případě nepřímé střely pak záleží, zda je puk mířen na bližší či vzdálenější
+ tyč od místa odrazu.
+ Typy střel (1-3) lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Názorné-schéma-trojúhelníkové"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ V některých situacích se v profesionální hře využívá i několikanásobný
+ odrazu puku od obou mantinelů.
+ Puk se tak stává hůře předvídatelný pro bránícího hráče.
+ Takový typ střely má ale zásadní nevýhodu v podobě dlouhé doby doletu k
+ brankové oblasti a dává tak obránci více času.
+ Zároveň odrazy od mantinelů výrazně snižují rychlost puku a stěžují míření
+ útočníka, proto je jejich využití výjimečné
+\end_layout
+
+\begin_layout Standard
+Vzhledem k pravidlu, které zakazuje držení puku na jedné polovině hrací
+ plochy déle jak sedm sekund (viz kapitola 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Pravidla-hry"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), se kromě úderů s cílem skórovat využívají i takzvané falešné střely 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-13"
+literal "false"
+
+\end_inset
+
+ za účelem pouze zmást protivníka a odrazem od zadní stěny získat puk zpátky
+ na svoji polovinu (viz obrázek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Znázornění-falešné-střely"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ Odpočítávání maximální doby puku na útočníkově polovině se tímto restartuje.
+ Celá útočná série se tak může skládat s několika falešných střel zakončená
+ přesným útokem na bránu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/faint_shoot.png
+	lyxscale 20
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Znázornění-falešné-střely"
+
+\end_inset
+
+Znázornění falešné střely
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Analýza lidského chování
+\end_layout
+
+\begin_layout Standard
+Detailní analýzou lidského chování při různých sportovních aktivitách lze
+ získat mnoho užitečných informací nejen o vlastnostech, ve kterých lidský
+ mozek vyniká, ale i o situacích, kdy je omezená rychlost reakce zásadní
+ nevýhodou.
+ V jedné z nejrychlejších stolních her světa - vzdušného hokeje jsou tyto
+ nedostatky násobeny.
+ 
+\end_layout
+
+\begin_layout Standard
+V publikaci vydané v roce 2012 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-14"
+literal "false"
+
+\end_inset
+
+ byly shrnuty poznatky ze sledování pohybu očí lidských hráčů při předem
+ definovaných herních situacích.
+ Pro rozpoznání sledovaného bodu byl využit přistroj EMR8
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Přístroj pro obrazovou analýzu firmy NAC Image Technology Inc
+\end_layout
+
+\end_inset
+
+, připevněný na helmě sledovaného hráče a využívající infračervené záření
+ spolu se snímací kamerou (viz obrázek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Fotka-experimentální-sestavy"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ Získané data byly poté pomocí transformační matice přepočítávané do souřadného
+ systému herního stolu.
+ Transformační matice byla neustále aktualizována a počítána z projektovaných
+ obrazců na herní ploše pro co nejpřesnější výsledky.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/sledovani_oci2.png
+	lyxscale 60
+	width 70line%
+	BoundingBox 0bp 0bp 745bp 534bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fotka-experimentální-sestavy"
+
+\end_inset
+
+Fotka experimentální sestavy pro sledování pohybu očí lidského hráče 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-14"
+literal "false"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Sledování pohybu očí probíhalo na třech předem definovaných trajektorií
+ puku se dvěma hodnotami rychlosti.
+ Dohromady bylo tedy opakovaně zkoumáno šest různých situací.
+ Trajektorie puku se náhodně střídala mezi přímou střelou středem, odrazem
+ od levého mantinelu a odrazem od pravého mantinelu 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-14"
+literal "false"
+
+\end_inset
+
+ (viz obrázek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schéma-definovaných-testovacích"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ Střely byly prováděny testovací robotickou rukou se dvěma stupni volnosti
+ sestavenou pro tyto účely autory publikace.
+ Tím byla zajištěna reprodukovatelnost jednotlivých střel.
+ 
+\end_layout
+
+\begin_layout Standard
+Cílem bylo zjistit, u jakých typů střel a při jakých rychlostech bylo sledování
+ puku nejproblematičtější a naopak které situace nedělali lidské schopnosti
+ sledovat pohybující se objekt potíže.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/trajektorie.png
+	lyxscale 60
+	height 25page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Schéma-definovaných-testovacích"
+
+\end_inset
+
+Schéma testovacích trajektorií puku při sledování pohybu očí lidského hráče
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Pro pomalejší verze trajektorií střely (2 
+\begin_inset Formula $\nicefrac{m}{s}$
+\end_inset
+
+) vyplynuly z výsledku sledování následující poznatky 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-14"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+Subjekt při snaze pozorování pohybujícího se puku sledoval oblast, kde se
+ puk nacházel před 0,2 vteřinami.
+\end_layout
+
+\begin_layout Itemize
+V častých případech subjekt změnil pohled na protivníkovu hokejku okamžitě
+ po odražení puku na své polovině.
+\end_layout
+
+\begin_layout Standard
+Při rychlých střelách (3-5 
+\begin_inset Formula $\nicefrac{m}{s}$
+\end_inset
+
+) potom 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-14"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+Subjekt sledoval oblast, kde se puk nacházel před 0,27 vteřinami.
+\end_layout
+
+\begin_layout Itemize
+V některých případech subjekt ztratil schopnost puk sledovat úplně.
+\end_layout
+
+\begin_layout Standard
+Těsně před úderem robota subjekt v obou případech sledoval oblast hrací
+ plochy před pukem ve směru k subjektu.
+ U začátečnických hráčů se také jevilo problematické sledování trajektorie
+ puku s místem odrazu poblíž hráče.
+ V případě odrazu puku od mantinelu poblíž robotické ruky, bylo sledování
+ puku obecně úspěšnější 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-14"
+literal "false"
+
+\end_inset
+
+.
+ Z těchto dat lze poté vyvodit typ střely s největší pravděpodobností ztráty
+ schopnosti sledovat její trajektorii obráncem - a tedy střela s odrazem
+ od mantinelu poblíž obráncovi brány.
+ 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Matematický-model-hry"
+
+\end_inset
+
+Matematický model hry
+\end_layout
+
+\begin_layout Standard
+Vzhledem k vlastnostem systému se matematický model vzdušného hokeje dá
+ po zanedbání teoretických nelinearit jako je náklon stolu nebo nehomogenní
+ proudění vzduchu děrovanou deskou omezit na popis puku a jeho interakci
+ s herní plochou, mantinely a herními hokejkami.
+\end_layout
+
+\begin_layout Subsubsection
+Matematický popis puku
+\end_layout
+
+\begin_layout Standard
+Herní puk vzdušného hokeje je možné matematicky popsat jako tenký uniformní
+ disk s hmotností 
+\begin_inset Formula $m$
+\end_inset
+
+, poloměrem 
+\begin_inset Formula $r$
+\end_inset
+
+ a momentem hybnosti 
+\begin_inset Formula $I$
+\end_inset
+
+ k středové ose vyjádřeným vztahem (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:hybnost"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-15"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+I=\frac{mr^{2}}{2}.\label{eq:hybnost}
+\end{equation}
+
+\end_inset
+
+Popis stavu puku 
+\begin_inset Formula $q$
+\end_inset
+
+ v čase 
+\begin_inset Formula $t$
+\end_inset
+
+ je potom vyjádřen vztahem (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:stav_puku"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-15"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+q(t)=(x(t),y(t),\Theta(t)),\label{eq:stav_puku}
+\end{equation}
+
+\end_inset
+
+kde 
+\begin_inset Formula $x(t)$
+\end_inset
+
+ a 
+\begin_inset Formula $y(t)$
+\end_inset
+
+ je poloha puku a 
+\begin_inset Formula $\Theta(t)$
+\end_inset
+
+ je natočení puku v souřadnicovém systému vzdušného hokeje.
+\end_layout
+
+\begin_layout Subsubsection
+Interakce puku s herní plochou
+\end_layout
+
+\begin_layout Standard
+Vzduch, proudící zpod děrované desky a vytvářející vzduchový polštář pod
+ klouzajícím pukem, výrazně snižuje tření a zajišťuje tak pohyb téměř bez
+ ztráty rychlosti.
+ Zvláště při pomalých pohybech ale tento úbytek kinetické energie zanedbatelný
+ není.
+ Při předpokladu, že je stůl vodorovný, lze sílu působící proti pohybu puku
+ vyjádřit vztahem (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:tlakova_sila"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kivy_guide"
+literal "false"
+
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+F_{T}=\mu\cdot F_{N},\label{eq:tlakova_sila}
+\end{equation}
+
+\end_inset
+
+kde 
+\begin_inset Formula $\mu$
+\end_inset
+
+ je koeficient tření a 
+\begin_inset Formula $F_{N}$
+\end_inset
+
+ je síla působící na podložku vyjádřená vztahem (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:sila_napodlozku"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+):
+\begin_inset Formula 
+\begin{equation}
+F_{N}=m\cdot g-F_{vz},\label{eq:sila_napodlozku}
+\end{equation}
+
+\end_inset
+
+kde 
+\begin_inset Formula $m$
+\end_inset
+
+ je hmotnost puku, 
+\begin_inset Formula $g$
+\end_inset
+
+ je gravitační zrychlení a 
+\begin_inset Formula $F_{vz}$
+\end_inset
+
+ je nadnášející síla vzniklá proudem vzduchu.
+ Grafické znázornění působících sil lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Znázornění-sil-působící"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kivy_guide"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/treci_sila.png
+	lyxscale 40
+	height 15pheight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Znázorně
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Znázornění-sil-působící"
+
+\end_inset
+
+ní sil působící na puk pohybující se po hrací desce 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kivy_guide"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Odraz-puku-od"
+
+\end_inset
+
+Odraz puku od mantinelů
+\end_layout
+
+\begin_layout Standard
+Největší úbytek kinetické energie puku nastává při odrazech od krajních
+ mantinelů 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-17"
+literal "false"
+
+\end_inset
+
+.
+ Po zanedbání změny rotace vzhledem k malému tření mezi pukem a mantinelem
+ v okamžiku interakce, můžeme výsledný vektor rychlosti po odrazu zjednodušeně
+ vyjádřit zrcadlením vektoru rychlosti přes normálový vektor mantinelu a
+ zmenšením jeho velikosti.
+ 
+\end_layout
+
+\begin_layout Standard
+Výsledná tlumená velikost je potom vyjádřena vztahem (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:tlumena_rychlost"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+|v|=|v_{0}|\cdot\epsilon,\label{eq:tlumena_rychlost}
+\end{equation}
+
+\end_inset
+
+kde 
+\begin_inset Formula $|v|$
+\end_inset
+
+ je velikost výsledné rychlosti, 
+\begin_inset Formula $|v_{0}|$
+\end_inset
+
+ je původní velikost rychlosti před odrazem a 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ je koeficient tlumení.
+ Znázornění odrazu lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Znázornění-odrazu-puku"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/odraz_puku.png
+	lyxscale 40
+	height 25pheight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Znázornění-odrazu-puku"
+
+\end_inset
+
+Znázornění odrazu puku od mantinelu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Interakce puku s hokejkou
+\end_layout
+
+\begin_layout Standard
+Nejsložitější z interakcí je model kolize puku s hokejkou.
+ Popis je podobný odrazu od mantinelu s rozdílem nenulové rychlosti herní
+ hokejky.
+ Při předpokladu elastické srážky a zanedbání změny pohybu hokejky při srážce
+ lze vyjádřit výslednou rychlost puku po odrazu 
+\begin_inset Formula $v$
+\end_inset
+
+ jako součet vektorů zrcadlené rychlosti puku 
+\begin_inset Formula $v_{0n}$
+\end_inset
+
+ od normály kolizní roviny a vektoru rychlosti hokejky 
+\begin_inset Formula $v_{h}$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-18,key-19"
+literal "false"
+
+\end_inset
+
+.
+ Znázornění odrazu puku od hokejky lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Znázornění-odrazu-puku-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/odraz_od_hokejky.png
+	lyxscale 40
+	height 30pheight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Znázornění-odrazu-puku-1"
+
+\end_inset
+
+Znázornění odrazu puku od pohybující se hokejky
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Detekce pozice objektů
+\end_layout
+
+\begin_layout Standard
+Způsoby řešení sledování polohy pohybujícího se objektu lze rozdělit na
+ dva hlavní přístupy:
+\end_layout
+
+\begin_layout Itemize
+sledování objektu pomocí kamerových systémů
+\end_layout
+
+\begin_layout Itemize
+využití jiných hardwarových prvků pro detekci polohy
+\end_layout
+
+\begin_layout Standard
+V obou případech je hlavní důraz kladen na co nejpřesnější výstup informace
+ reprezentující polohu sledovaného objektu s minimálním efektem šumu a maximální
+ obnovovací frekvencí.
+\end_layout
+
+\begin_layout Subsection
+Kamerové systémy
+\end_layout
+
+\begin_layout Standard
+Výhodou sledování polohy objektu pomocí kamerových systémů je zejména obrovská
+ flexibilita ve výběru patřičného hardwaru a relativní jednoduchost v implementa
+ci sledovacích algoritmů.
+ Často je ale zapotřebí poměrně velká vzdálenost kamery od roviny, kde se
+ sledovaný objekt nachází a celý systém tak může zabírat velký prostor.
+ Přesnost detekované polohy a hodnota obnovovací frekvence pak závisí na
+ rozlišovací schopnosti kamery respektive výkonu výpočetní jednotky, která
+ jednotlivé snímky z kamery zpracovává.
+ Díky tomu se může kvalitní a rychlá detekce projevit vysokou pořizovací
+ cenou hardwaru.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Algoritmy-detekce"
+
+\end_inset
+
+Algoritmy detekce
+\end_layout
+
+\begin_layout Standard
+Detekování polohy objektu je prováděno na jednotlivých snímcích získávaných
+ z kamery.
+ Podle typu kamery a vlastnostech sledovaného objektu spolu s jeho okolím
+ lze využít jeden z následujících přístupů (nebo jejich kombinaci) .
+\end_layout
+
+\begin_layout Paragraph
+Hledání objektu podle úrovně světlosti pixelů.
+\end_layout
+
+\begin_layout Standard
+Princip vyhledání objektu je v tomto případě založen na převedení jednotlivých
+ snímků na binární obraz, tzv.
+ masku snímku (viz obrázek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Maska-snímku-hrací"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/maska.png
+	lyxscale 60
+	height 20pheight%
+	rotateAngle 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Maska-snímku-hrací"
+
+\end_inset
+
+Maska snímku hrací plochy vzdušného hokeje
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Každému pixelu, který spadá svojí hodnotou odstínu šedi do daného vyhledávajícíh
+o intervalu je přiřazena pravdivostní hodnota 1.
+ Naopak pokud je hodnota mimo rozsah, odpovídajícímu pixelu je přiřazena
+ hodnota 0.
+ Matice těchto hodnot je právě maska snímku, kde pixely s hodnotou 1 odpovídají
+ nalezenému objektu.
+ Pozici hledaného objektu poté odpovídá poloha těžiště pixelů masky s pravdivost
+ní hodnotou 1 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-191,key-20"
+literal "false"
+
+\end_inset
+
+.
+ Z obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Maska-snímku-hrací"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ je zřejmé, že by poloha těžiště neodpovídala poloze hledaného objektu,
+ proto by v tomto případě bylo zapotřebí změnit vyhledávací parametry nebo
+ zavést další kritéria (minimální velikost shluku nalezených pixelů apod.)
+ 
+\end_layout
+
+\begin_layout Standard
+Vzhledem k využití informace pouze o intenzitě jednotlivých pixelů lze tuto
+ metodu s výhodou využít v kombinaci s černobílými kamerami.
+ Zároveň jsou díky jednoduchosti algoritmu kladeny nižší nároky na výkonost
+ výpočetní jednotky.
+ Informace pouze o intenzitě pixelu může být v ale i nevýhoda právě v případě,
+ že se v záběru kamery objevují parazitní objekty s podobnou hodnotou odstínu
+ šedi jako má hledaný objekt.
+\end_layout
+
+\begin_layout Paragraph
+Hledání objektu podle barvy pixelů.
+\end_layout
+
+\begin_layout Standard
+Metoda je podobná principu hledání objektu pouze pomocí intenzity pixelů,
+ využívá ale dodatečnou informaci o barvě.
+ Snímky se konvertují do formátu HSV
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+HSV = Hue - odstín, Saturation - sytost barvy, Value - hodnota jasu
+\end_layout
+
+\end_inset
+
+ a hodnota H (Hue) jednotlivých pixelů se poté porovnává s vyhledávajícím
+ intervalem.
+ Vyhledávání je tak z principu popisu barevného modelu HSV invariantní ke
+ změně intenzity osvětlení scény 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-21,key-24,key-22"
+literal "false"
+
+\end_inset
+
+.
+ Podobně jako u předchozí metody tak vznikne maska snímku, ze kterého se
+ dalším postupem získává poloha nalezeného objektu (viz obrázek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Původní-obrázek-a"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/maska_hsv.png
+	lyxscale 40
+	height 23pheight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Původní-obrázek-a"
+
+\end_inset
+
+Původní obrázek a maska obrázku při hledání objektu za pomocí barvy 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-23"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Metoda je stále poměrně nenáročná na výpočetní výkon a zároveň nezávislá
+ na rozlišení kamery.
+ Pro zvýšení obnovovací frekvence tak lze jednoduše snížit rozlišení snímků
+ bez potřeby úpravy vyhledávajícího algoritmu.
+ Problém ale nastává se změnou baveného odstínu osvětlení, proto je v tomto
+ případě doporučeno zajistit neměnný zdroj světla 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-22"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Hledání objektu podle detekovaných tvarů.
+\end_layout
+
+\begin_layout Standard
+V případě, kdy není barva či hodnota stupně šedi hledaného objektu na snímku
+ jedinečná, lze využít algoritmů pro vyhledávání specifických tvarů.
+ Například při detekci hledaného objektu se specifickým kruhovým tvarem
+ lze využít Hoghovu transformaci pro detekci kružnic 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-25"
+literal "false"
+
+\end_inset
+
+ (viz obrázek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Nalezená-kružnice-na"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ Algoritmus tak není závislý na specifické barvě či světlosti objektu což
+ je častý předpoklad při potřebě detekování více předmětů na jednom snímku
+ jako je sledování dopravních prostředků nebo kontrola vadných kusů při
+ výrobě 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-26"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/plechovka.png
+	lyxscale 40
+	height 15pheight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Nalezená-kružnice-na"
+
+\end_inset
+
+Nalezená kružnice na obrázku plechovky pomocí Hoghovi transformace 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-25"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Zásadní nevýhodou je často velká výpočetní náročnost a v některých případech
+ náchylnost na šum.
+ Proto je metoda nalezení hran a specifických geometrických tvarů využívána
+ spolu s filtračními algoritmy zejména v aplikacích nespoléhající na vysokou
+ obnovovací frekvenci detekce.
+\end_layout
+
+\begin_layout Paragraph
+Hledání objektu pomocí umělé inteligence.
+\end_layout
+
+\begin_layout Standard
+Asi nejobecnější způsob detekce při správné implementaci je právě využití
+ umělé inteligence v podobě naučených neuronových sítí.
+ Výstupem z neuronové sítě pak může být rovnou hledaná poloha bez nutnosti
+ výpočtu těžiště masky apod.
+ Samotná detekce je tak velmi rychlá, u některých algoritmů jako je například
+ YOLO 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-27"
+literal "false"
+
+\end_inset
+
+ stačí jeden průchod sítí pro kompletní detekci a klasifikaci i několika
+ objektů (viz obrázek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Detekce-a-klasifikace"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), což umožňuje využívat tyto typy sítě i u videí a streamů s vysokou obnovovací
+ frekvencí.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/yolo.png
+	lyxscale 40
+	height 17pheight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Detekce-a-klasifikace"
+
+\end_inset
+
+Detekce a klasifikace objektů neuronovou sítí YOLO 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-28"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nevýhoda neuronových sítí spočívá v jejich složité implementaci a nutnosti
+ provádět časově velmi náročně učení před samotným využitím.
+ Častým problémem je i fakt, že se kromě učení nedá ovlivnit, co neuronová
+ sít vnímá jako hledaný objekt.
+ Může se tak stát, že malá změna ve vlastnostech obrazu (šum, natočení kamery)
+ zapříčiní nesprávnou detekci objektu 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-27"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Z podstaty neuronových sítí je také problematická změna velikosti vstupní
+ matice - tedy rozlišení obrazu.
+ Znamená to, že při této metodě rozpoznávání objektu není možné bez úpravy
+ struktury a opětovného učení měnit rozlišení vstupních snímků 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-30"
+literal "false"
+
+\end_inset
+
+.
+ Příklad neuronové sítě využívané pro klasifikaci objektu lze vidět na obrázku
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Postup-strukturou-neuronové"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/neuronka.png
+	lyxscale 40
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Postup-strukturou-neuronové"
+
+\end_inset
+
+Postup strukturou konvoluční neuronové sítě pro klasifikaci objektu 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-29"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Příklady hardwaru
+\end_layout
+
+\begin_layout Standard
+Rychlost a kvalitu detekce ovlivňuje kromě použitého algoritmu i na samotný
+ hardware.
+ Ten i z velké části určuje celkovou cenu systému.
+ Ne vždy ale platí, že dražší kamera znamená kvalitnější výsledky nebo výkonnějš
+í výpočetní jednotka rychlejší detekci.
+ Navíc v případě nekvalitní kamery výkonná jednotka ztrácí z velké části
+ smysl a naopak.
+ Níže budou uvedeny příklady možných kombinací kamery a výpočetního hardwaru.
+\end_layout
+
+\begin_layout Paragraph
+Průmyslové kamery.
+\end_layout
+
+\begin_layout Standard
+Průmyslové kamery integrují jak samotnou kameru, tak výpočetní jednotku
+ instalovanou v jenom kompaktním zařízení.
+ Přenos detekovaných dat je pak zajištěn například pomocí ethernetového
+ kabelu.
+ Na trhu existuje několik společností nabízející spoustu různých konfigurací
+ pro specifické případy 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-31"
+literal "false"
+
+\end_inset
+
+ (viz obrázek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Průmyslové-kamery-série"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ Většinou je instalování velice rychlé a systémy obsahují již předprogramované
+ algoritmy pro základní potřeby strojového vidění, takže se zkracuje i doba
+ vývoje.
+ Nevýhodou je ale vysoká cena a často omezené způsoby uživatelské konfigurace.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/cognex.png
+	lyxscale 40
+	height 22pheight%
+	BoundingBox 0bp 20bp 516bp 340bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Průmyslové-kamery-série"
+
+\end_inset
+
+Průmyslové kamery série 7000 společnosti Cognex
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Web kamery s externí výpočetní jednotkou.
+\end_layout
+
+\begin_layout Standard
+Jedna z možností je i využití web kamery připojované standardním USB 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Universal Serial Bus - univerzální sériová sběrnice umožňující připojení
+ periferií k počítači
+\end_layout
+
+\end_inset
+
+ rozhraním.
+ Celý obraz je tak přenášen do externí výpočetní jednotky na které jsou
+ snímky zpracovávány.
+ Výhodou je velká flexibilita ve výběru hardwaru a možnost tak výrazně ušetřit
+ náklady například využitím již vlastněných web kamer z jiných aplikací.
+ V kombinaci s levnými mikropočítači jako je Raspberry Pi (viz obrázek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Příklad-web-kamery"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) dokáže být tato možnost cenově velice výhodná 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-33"
+literal "false"
+
+\end_inset
+
+.
+ Nutnost přenášet celý obraz skrze standardizované rozhraní může ale znatelně
+ zpomalovat celkovou detekci.
+ Časově náročnější je i samotná konfigurace a vývoj systému bez možnosti
+ využití proprietárních předprogramovaných algoritmů.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/webkamera_rpi.png
+	lyxscale 50
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Příklad-web-kamery"
+
+\end_inset
+
+Příklad web kamery zapojené do mikropočítače Raspberry Pi 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-33"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Raspberry Pi s modulem kamery.
+\end_layout
+
+\begin_layout Standard
+Konkrétním příkladem kamer s externí výpočetní jednotkou je kombinace Raspberry
+ Pi s modulem kamery dodávaným speciálně pro tento mikropočítač.
+ Rozdíl od web kamery je ale v připojení komunikace.
+ Kamera v tomto případě nemusí s Raspberry Pi komunikovat skrze USB rozhraní,
+ ale data jsou posílána přímo na grafický čip počítače, kde se dále zpracovávají
+ a nezatěžují proto hlavní výpočetní jednotku 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-34"
+literal "false"
+
+\end_inset
+
+.
+ Přenos je tak výrazně urychlen a tím i navýšen počet přijatých snímků za
+ vteřinu.
+ Vzhledem k speciálnímu typu připojení (viz obrázek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Raspberry-Pi-s"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) ale odpadá výhoda flexibility ve výběru hardwaru jako v případě využití
+ web kamer.
+ Naopak je však jednoduší konfigurace a samotný vývoj algoritmů vzhledem
+ k velké rozšířenosti mezi uživateli a dobré podpory ze strany výrobce.
+ K dispozici jsou i knihovny, zajišťující jednoduché ovládání a získávání
+ dat z kamery v několika programovacích jazycích.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/camera_modul.png
+	lyxscale 60
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Raspberry-Pi-s"
+
+\end_inset
+
+Raspberry Pi s připojeným modulem kamery 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-35"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aktuálně existují dvě verze těchto kamer dodávané přímo výrobcem samotného
+ Raspberry Pi počítače.
+ V nejnovější verzi kamera umožňuje snímání obrazu s rozlišením až 3280x2464
+ pixelů a nahrávání videa v rozlišení 1920x1080 s rychlostí 30 snímků za
+ vteřinu nebo v rozlišení 640x480 s rychlostí 90 snímků za vteřinu.
+ Pokrývá tak situace využití jak při potřebě kvalitních snímků, tak při
+ nutnosti rychlého snímání s menším rozlišením (například při detekci polohy
+ objektu).
+\end_layout
+
+\begin_layout Subsection
+Ostatní přístupy
+\end_layout
+
+\begin_layout Standard
+Metody využívající kamerové systémy jsou v řadě případů jediná rozumná řešení
+ při požadavku bezpečné detekce polohy objektu.
+ Ve specifických situacích je ale naopak vhodnější využít jiný přístup.
+ Řadí se mezi ně například detekce polohy pomocí dotyku s měřící sondou,
+ využití magnetických vlastností objektu nebo detekce pomocí senzorů vzdálenosti.
+ Často je pak takové řešení rychlejší, levnější a někdy i spolehlivější
+ než již zmíněné kamerové systémy.
+\end_layout
+
+\begin_layout Standard
+Příkladem tomu může být přístup, se kterým přišli studenti z polytechnické
+ univerzity z Ohia, kteří řešili problém detekce míčku na herní ploše stolního
+ fotbalu.
+ V tomto případě by byl pohled kamery umístěné nad fotbalem blokován samotnými
+ hráči a detekce by tak mohla být problematická 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-37"
+literal "false"
+
+\end_inset
+
+.
+ Studenti využili sérii infračervených LED diod a fototranzistorů umístěných
+ naproti sobě ve vnitřním obvodu stolu.
+ Detekce tak nebyla blokována herními osami a vynikala velmi vysokou rychlostí
+ odezvy.
+ 
+\end_layout
+
+\begin_layout Standard
+Problém ale vznikal rušením a vzájemným ovlivňováním sousedních dvojic (dioda
+ – tranzistor).
+ Toto bylo řešeno dvěma způsoby.
+ První z nich byl zahloubení diod do boční stěny stolu.
+ Tímto se omezila šířka emitovaného signálu a velikost ovlivněné plochy
+ na protější straně.
+ Druhým řešením bylo fázové posunutí intervalů sepnutí diod.
+ Integrací obou zmíněných opatření byly pak nejbližší, ve stejný okamžik
+ sepnuté diody od sebe vzdáleny asi 32 cm.
+ Celkový počet takto fázově posunutých dvojic byl 16 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-36"
+literal "false"
+
+\end_inset
+
+.
+ Princip zapojení je naznačen na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Princip-zapojení-a"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ (různé časové intervaly zapnutí jsou znázorněny barevným odlišením).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/diody.png
+	lyxscale 40
+	height 28pheight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Princip-zapojení-a"
+
+\end_inset
+
+Princip zapojení a uspořádání infračervených LED diod a tranzistorů 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-37"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Takto zapojené dvojice byly orientovány v horizontálním (117 párů) a vertikálním
+ (68 párů) směru.
+ Z obrázku je také patrná hlavní nevýhoda tohoto řešení.
+ A tedy, že přesnost detekované polohy silně závisí na počtu párů.
+ Oproti tomu počet párů zase zesiluje rušení a zvyšuje cenu celé soustavy.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Konstrukce a hardware
+\end_layout
+
+\begin_layout Standard
+Brutálně vychváli Doma, kterej je hlavní šéf projektu a totální bombič.
+\end_layout
+
+\begin_layout Standard
+(Nevim jestli takhle, někam to ale musím dat)
+\end_layout
+
+\begin_layout Standard
+Popsat raspberry pi, kameru, displej atak
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Simulace hry
+\end_layout
+
+\begin_layout Standard
+Z důvodu potřeby vývoje, intenzivního testování strategie hry a vyladění
+ rozhodovacích algoritmů při specifických situacích byla vytvořena počítačová
+ simulace hry vzdušného hokeje.
+ Simulace pak umožňovala jak zpomalení a zrychlení simulovaného času pro
+ detailní analýzu stylu hry aktuálně aktivní strategie, tak i paralelní
+ zpracovávání několika spuštěných her současně, umožňující zkoumat statistické
+ údaje úspěšnosti naprogramovaných strategií hrajících proti sobě.
+ Vývoj rozhodovacích algoritmů navíc nemusel záviset na kompletně sestaveném
+ a dokončeném RVH.
+\end_layout
+
+\begin_layout Standard
+Pro tyto účely bylo nutné zajistit co nejpřesnější reprezentaci reálného
+ chování systému kompletně v simulovaném prostředí spolu i s náhodnými nepřesnos
+tmi snímání puku na ploše hokeje a dynamickými vlastnostmi robotické hokejky.
+ Součástí simulace jsou také algoritmy ohodnocující střelu vyslanou jedním
+ z hráčů.
+ Pomocí těchto metrik jsou poté přidělovány body každému z hráčů.
+ Ty můžou sloužit jako ukazatel výkonnosti dané strategie i při nevstřelení
+ žádného gólu.
+\end_layout
+
+\begin_layout Standard
+V průběhu simulace je možné interagovat s pukem a jedním z hráčů pomocí
+ myši a zajistit tak opakovatelnost specifických situací.
+ V kombinaci s možností zpomalení simulovaného času se tak stává simulační
+ software velice užitečným vývojovým nástrojem.
+ V neposlední řadě bylo umožněno i nahrání uložených záznamů her přímo z
+ RVH pro možnost dodatečného zkoumání situací i z reálného stolu.
+ Výslednou podobu vytvořeného simulačního softwaru i s informačním panelem
+ zobrazující aktuální stav hry lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Simulační-program-pro"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/simuace_popis.pdf
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Simulační-program-pro"
+
+\end_inset
+
+Simulační program pro vývoj a analýzu strategie RVH
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+V následující kapitole budou popsány jednotlivé stěžejní části vývoje simulačníh
+o softwaru v jazyce Python spolu s vysvětlením celkového rozvržení struktury
+ programu.
+\end_layout
+
+\begin_layout Subsection
+Struktura programu
+\end_layout
+
+\begin_layout Standard
+Vzhledem k nutnosti simulace celého systému RVH se struktura simulačního
+ softwaru v mnoha ohledech podobala výsledné struktuře softwaru aplikovaného
+ přímo v řídící jednotce stolu.
+ Na rozdíl od výsledného softwaru pro RVH nebyl kladen příliš velký důraz
+ na optimalizaci kódu, ale spíše na zkrácení doby vývoje pro co nejrychlejší
+ možnost návrhu a testování strategií.
+ Některé dodatečné funkce simulačního softwaru pak vznikali přímo při návrhu
+ strategií podle aktuální potřeby testování.
+ 
+\end_layout
+
+\begin_layout Standard
+Logika programu je rozdělena na jednotlivé třídy spravující určitou oblast
+ problému.
+ Třídy mohou z podstaty problému spadat pod třídy jim nadřazené.
+ Například třída 
+\emph on
+Player
+\emph default
+, která řeší logiku spojenou s jednotlivými hráči (aktualizace skóre, interpreto
+vání dat ze strategie atd.) spadá pod třídu 
+\emph on
+Game, 
+\emph default
+zahrnující nejen správu obou hráčů, ale například i zpracování dat ze simulované
+ kamery snímající polohu simulovaného puku apod.
+ Tímto přístupem při vývoji softwaru lze i při rozsáhlejším programu zajistit
+ přehlednost a jednoduchou navigaci ve zdrojovém kódu.
+ 
+\end_layout
+
+\begin_layout Standard
+Kromě takto hierarchicky navržených tříd byly vytvořeny i třídy pomocné,
+ které nespadaly pod žádnou nadřenou třídu a byly využívány napříč celou
+ strukturou a později i na softwaru reálného RVH.
+ Zjednodušené znázornění celé struktury softwaru spolu s pomocnými třídami
+ lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Znázornění-struktury-simulačního"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/struktura_simulace.pdf
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Znázornění-struktury-simulačního"
+
+\end_inset
+
+Znázornění struktury simulačního softwaru vzdušného hokeje 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O některých třídách bude více pojednáno níže.
+ Například strukturu modulu strategie, který je hlavním výstupem
+\emph on
+ 
+\emph default
+z následného návrhu strategie v tomto simulačním prostředí, popisuje kapitola
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Struktura-modulu-strategie"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Většinu vzniklých pomocných tříd ale není možné z důvodu velké obsáhlosti
+ a komplexnosti více přibližovat.
+ Pro více informací lze nahlédnout do zdrojových souborů v příloze
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Doplnit odkaz na přílohu
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Základem softwaru je knihovna pygame, která zpracovává uživatelský vstup
+ z klávesnice a myši, zajišťuje vykreslování grafiky ve vytvořeném okně
+ a poskytuje základní matematické funkce pro vektorový výpočet.
+ 
+\end_layout
+
+\begin_layout Standard
+Po inicializování objektů a definování nastavovacích proměnných začne probíhat
+ až do uzavření okna cyklus, který v každém svém průběhu kontroluje uživatelský
+ vstup, přepočítává stav hry a simulace, aktualizuje grafický výstup a synchroni
+zuje simulovaný čas.
+ 
+\end_layout
+
+\begin_layout Standard
+Frekvence výpočtů závisí na aktuálně nastavené hodnotě rychlosti simulace.
+ Při hodnotě vyšší jak 1 (zrychlená simulace) se provede výpočet kroku simulace
+ i několikrát za jeden průběh hlavního cyklu (vykreslení snímku).
+ Naopak při hodnotě menší jak 1 (zpomalená simulace) se při každém průběhu
+ cyklu počítá krok simulace s menší dobou kroku 
+\emph on
+steptime
+\emph default
+, tzn.
+ že při jednom kroku se simulace posune o menší časový úsek.
+ Vykreslování je tak i při zpomalení simulace stále plynulé.
+ Vývojový diagram simulačního softwaru vzdušného hokeje lze vidět na obrázku
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Vývojový-diagram-simulačního"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/vyvdiag_simulace.pdf
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Vývojový diagram simulačního softwaru vzdušného hokeje
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Vývojový-diagram-simulačního"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Simulace fyziky
+\end_layout
+
+\begin_layout Standard
+Implementace simulace fyziky hry RVH byla založena na teoretickém rozboru
+ z kapitoly 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Matematický-model-hry"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Hodnoty tření a míra tlumení rychlosti puku po odrazech byly z počátku
+ odhadovány.
+ V pozdější fázi vývoje, kdy byly k dispozici data z kamery reálného systému,
+ byly tyto hodnoty upravovány pro co nejpřesnější matematickou reprezentaci
+ vzdušného hokeje.
+\end_layout
+
+\begin_layout Standard
+Stěžejní částí simulace bylo řešení kolizí puku s ostatními objekty na hrací
+ ploše.
+ Konkrétně se kolize daly rozlišit na dvě specifické situace:
+\end_layout
+
+\begin_layout Itemize
+Kolize s hokejkou
+\end_layout
+
+\begin_layout Itemize
+Kolize s mantinelem
+\end_layout
+
+\begin_layout Standard
+Pro každou situaci bylo nutné řešit mírně odlišný problém.
+\end_layout
+
+\begin_layout Subsubsection
+Kolize s hokejkou
+\end_layout
+
+\begin_layout Standard
+Neboli typ kolize kruh-kruh (circle-circle).
+ V každém kroku simulace se kontroluje vzdálenost puku ke každé z hokejek
+ 
+\begin_inset Formula $i\in$
+\end_inset
+
+{1,2}.
+ Pokud je vzdálenost polohy středu puku 
+\begin_inset Formula $P$
+\end_inset
+
+ od středu jedné z hokejek 
+\begin_inset Formula $H_{i}$
+\end_inset
+
+ menší než součet poloměrů puku 
+\begin_inset Formula $r_{p}$
+\end_inset
+
+ a hokejky 
+\begin_inset Formula $r_{hi}$
+\end_inset
+
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:podmínka_kolize"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\begin_inset Formula 
+\begin{equation}
+|PH|<r_{p}+r_{hi},\label{eq:podmínka_kolize}
+\end{equation}
+
+\end_inset
+
+pak dochází k překrytí hokejky 
+\begin_inset Formula $i$
+\end_inset
+
+ pukem a tedy ke kolizi.
+ Postup řešení kolize typu kruh-kruh je pak vidět na zjednodušeném pseudokódu:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Řešení kolize typu kruh-kruh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+relativní rychlost = rychlost puku - rychlost hokejky
+\end_layout
+
+\begin_layout LyX-Code
+normála = normalizuj(pozice puku - pozice hokejky)
+\end_layout
+
+\begin_layout LyX-Code
+rychlost ve směru normály = relativní rychlost x normála 
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+pokud 
+\series default
+rychlost ve směru normály > 0
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+ukonči výpočet
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\series bold
+jinak
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+j = -(1 + restituce) * rychlost ve směru normály/(1/celková hmotnost)
+\end_layout
+
+\begin_layout LyX-Code
+impuls = normála * j
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+rychlost puku = impuls * 1/hmotnost puku
+\end_layout
+
+\begin_layout LyX-Code
+rychlost hokejky = impuls * 1/hmotnost hokejky
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Kolize s mantinelem
+\end_layout
+
+\begin_layout Standard
+Neboli typ kolize kruh-úsečka (circle-line).
+ V každém kroku simulace se kontroluje vzdálenost puku ke každé úsečce 
+\begin_inset Formula $u\in$
+\end_inset
+
+{1,2,...,N} definující ohraničení herní plochy.
+ V tomto případě se však musí kontrolovat nejen zda kolmá vzdálenost polohy
+ středu puku 
+\begin_inset Formula $P[p_{1},p_{2}]$
+\end_inset
+
+ od přímky 
+\begin_inset Formula $m:ax+by+c=0$
+\end_inset
+
+ procházející danou úsečkou 
+\begin_inset Formula $u$
+\end_inset
+
+ je menší jak poloměr puku 
+\begin_inset Formula $r_{p}$
+\end_inset
+
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:podminka_kolize_line"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\begin_inset Formula 
+\begin{equation}
+\frac{|a\cdot p_{1}+b\cdot p_{2}|}{\sqrt{a^{2}+b^{2}}}<r_{p},\label{eq:podminka_kolize_line}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ale zároveň i jestli poloha průsečíku přímky 
+\begin_inset Formula $m$
+\end_inset
+
+ a kolmice od přímky 
+\begin_inset Formula $m$
+\end_inset
+
+ procházející bodem 
+\begin_inset Formula $P$
+\end_inset
+
+ leží mezi koncovými body úsečky 
+\begin_inset Formula $u$
+\end_inset
+
+: 
+\begin_inset Formula $M_{u1}$
+\end_inset
+
+a 
+\begin_inset Formula $M_{u2}$
+\end_inset
+
+.
+ Pokud průsečík úsečce nenáleží, je nutné kontrolovat zda vzdálenost puku
+ 
+\begin_inset Formula $P$
+\end_inset
+
+ od koncových bodů úsečky 
+\begin_inset Formula $M_{u1}$
+\end_inset
+
+a 
+\begin_inset Formula $M_{u2}$
+\end_inset
+
+ není menší jak poloměr puku 
+\begin_inset Formula $r_{p}$
+\end_inset
+
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:konvoce_body"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\begin_inset Formula 
+\begin{equation}
+|PM_{uj}|<r_{p}\label{eq:konvoce_body}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pokud jedna z těchto dvou podmínek platí, dochází ke kolizi mezi kruhem
+ a úsečkou a je nutné ji řešit.
+ Znázorněné situace, které mohou nastat lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Možné-situace-při"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/situace_kolize.pdf
+	width 100line%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Možné-situace-při"
+
+\end_inset
+
+Možné situace při kontrole kolize typu kruh-úsečka
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Postup řešení kolize typu kruh-úsečka lze vidět na zjednodušeném pseudokódu:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Řešení kolize typu kruh-úsečka
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+přesah = poloměr puku - vzdálenost od úsečky
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+dokud 
+\series default
+přesah > 0
+\end_layout
+
+\begin_layout LyX-Code
+    vektor posunu = škáluj_vektor(rychlost puku, poloměr puku/10)
+\end_layout
+
+\begin_layout LyX-Code
+    poloha puku = poloha puku - vektor posunu
+\end_layout
+
+\begin_layout LyX-Code
+    přesah = poloměr puku - vzdálenost od úsečky
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+pokud
+\series default
+ průsečík náleží úsečce
+\end_layout
+
+\begin_layout LyX-Code
+    rychlost puku = zrcadli_vektor(rychlost puku, normála úsečky)
+\end_layout
+
+\begin_layout LyX-Code
+    rychlost puku = rychlost puku * tlumení
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+jinak
+\end_layout
+
+\begin_layout LyX-Code
+    řeš jako kolizi kruh-kruh pro puk a nejbližší koncový bod
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Simalace kamery
+\end_layout
+
+\begin_layout Standard
+Při sledování herní plochy RVH kamerou a následném detekování polohy puku
+ z jednotlivých snímků nelze nikdy obdržet dokonale přesnou a nezpožděnou
+ informaci.
+ Při simulaci by ale bez dodatečného simulovaného šumu strategie přesná
+ a okamžitá data k dispozici měla.
+ Proto by takto navržená strategie nemusela na reálném systému vykazovat
+ uspokojivé výsledky.
+ Z toho důvodu bylo nutné simulovat tři základní vlastnosti zapřičiňující
+ nepřesné snímání polohy.
+\end_layout
+
+\begin_layout Subsubsection
+Náhodná odchylka
+\end_layout
+
+\begin_layout Standard
+Nepřesnosti způsobené šumem snímaného obrazu byly zjednodušeně simulovány
+ náhodnou odchylkou od přesné polohy puku.
+ Odchylka byla modelována normálním rozdělením s nulovou střední hodnotou
+ a směrodatnou odchylkou s hodnotou 2 mm.
+\end_layout
+
+\begin_layout Subsubsection
+Diskretizace polohy
+\end_layout
+
+\begin_layout Standard
+Vzhledem ke omezenému rozlišení reálné kamery není možné pro algoritmus
+ detekující polohu puku rozlišit rozdíl mezi dvěma polohami s menší vzdáleností
+ než je odpovídající vzdálenost jednotlivých pixelů na snímku herní plochy.
+ Při nastaveném rozlišení kamery 320x192 a předpokladu snímání celé herní
+ plochy RVH o rozměrech 1000x600 mm vychází minimální detekovatelný rozdíl
+ vzdálenosti dvou různých poloh na přibližně 3 mm.
+\end_layout
+
+\begin_layout Standard
+Hrací plocha proto byla v simulaci rozdělena na mřížku poloh s rozestupem
+ 3.5 mm, ve kterých lze puk detekovat.
+ Detekovaná poloha pak odpovídala bodu na mřížce, který se nacházel nejblíže
+ aktuální poloze puku s již započítanou náhodnou odchylkou.
+ Znázornění simulace snímání a detekce puku lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Znázornění-simulace-snímání"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/simulace_kamery.pdf
+	width 80line%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Znázornění-simulace-snímání"
+
+\end_inset
+
+Znázornění simulace snímání a detekce puku.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Zpoždění informace
+\end_layout
+
+\begin_layout Standard
+Zpoždění informace o aktuální poloze vznikající na reálném systému zpracováváním
+ snímku a komunikací s řídící jednotkou bylo možné simulovat velice jednoduše
+ ukládáním několika posledních poloh a využíváním pouze té nejstarší ve
+ strategii.
+ Součin doby kroku a počet ukládaných poloh pak definoval dobu zpoždění.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Návrh strategie
+\end_layout
+
+\begin_layout Standard
+Strategií je v tomto kontextu rozuměna série rozhodovacích algoritmů, které
+ určují okamžitou žádanou polohu hokejky robotického hráče na základě aktuálního
+ stavu hry, jako je poloha a rychlost snímaného puku nebo robotické hokejky.
+ Z pravidla platí.
+ že čím jsou k dispozici přesnější a rychleji aktualizované data o aktuálním
+ stavu hry, tím přesněji a rychleji dokáže strategie reagovat.
+ Samotná účinnost reakce ale závisí na rozhodovacích algoritmech ve strategii,
+ o kterých bude tato kapitola pojednávat.
+\end_layout
+
+\begin_layout Standard
+Strategie byla vytvořena jako softwarový modul v programovacím jazyce Python,
+ možný bez nutnosti úprav používat jak v simulaci, tak při samotné implementaci
+ na cílovém hardwaru RVH.
+ Modularita tohoto řešení zkracuje celkový čas vývoje a umožňuje pravidelně
+ analyzovat herní situace v simulačním prostředí a upravovat strategii i
+ po dokončení projektu RVH.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Struktura-modulu-strategie"
+
+\end_inset
+
+Struktura modulu strategie
+\end_layout
+
+\begin_layout Standard
+Struktura softwarového modulu strategie je založena na objektových principech
+ dědičnosti.
+ Základním stavebním kamenem programu je abstraktní třída 
+\emph on
+BaseStrategy
+\emph default
+, která zaštiťuje obecnou funkcionalitu jako je zpracování vstupních dat
+ z kamery, výpočet trajektorie pohybu puku, základní strategické algoritmy
+ apod.
+ Z této třídy poté dědí jednotlivé podtřídy specifikující výsledné chování
+ robotického hráče.
+ Tento přístup zajišťuje snadný vývoj nových typů strategií a bezproblémovou
+ možnost změny strategie přímo za běhu programu.
+ Zjednodušený diagram s příkladem dědění dvou tříd strategie lze vidět na
+ obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Zobecněný-UML-diagram"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/uml_strategie.pdf
+	lyxscale 50
+	width 80line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Zobecněný-UML-diagram"
+
+\end_inset
+
+Zobecněný UML diagram dědičnosti tříd modulu strategie
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Každá z jednotlivých strategií (
+\emph on
+StrategyA
+\emph default
+ a 
+\emph on
+StrategyB) 
+\emph default
+tak může implementovat specifické rozhodovací algoritmy s diametrálně odlišnými
+ výsledky a zároveň využívat základní funkcionalitu a přistupovat k aktuálním
+ stavům hry bez redundance napsaného kódu.
+ Pro příklad k obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Zobecněný-UML-diagram"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+:
+\emph on
+ 
+\emph default
+strategie
+\emph on
+ StrategyB
+\emph default
+ vyniká v útoku s komplexními algoritmy pro míření, ale pro obranu využívá
+ základní algoritmus obrany z rodičovské třídy 
+\emph on
+BaseStrategy 
+\emph default
+bez nutnosti definice celé funkce znovu.
+ Zdrojový kód této strategie je pak uložen do vlastního souboru.
+ Oddělí se tak specifická logika dané strategie od obecných funkcí což vede
+ k přehledné a lehce rozšířitelné struktuře celého projektu.
+\end_layout
+
+\begin_layout Subsection
+Základní třída 
+\emph on
+BaseStrategy
+\end_layout
+
+\begin_layout Standard
+Třída 
+\emph on
+BaseStrategy
+\emph default
+ obsahuje tři speciální metody, pomocí kterých se řídí celý výpočet strategie
+ nadřazeným programem využívající tento modul:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+metoda 
+\emph on
+cameraInput(poloha)
+\series default
+\emph default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Volána nadřazeným programem pokaždé, když jsou k dispozici nová data o pozici
+ puku.
+ Tyto data jsou zpracována a na jejich základě vyhodnocena aktuální trajektorie
+ puku.
+ Více o této metodě bude pojednáno níže.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+metoda
+\emph on
+ setStriker(poloha, rychlost)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Volána nadřazeným programem pokaždé, když jsou k dispozici nová data o pozici
+ nebo rychlosti hokejky robotického hráče.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+metoda
+\emph on
+ process(doba kroku)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Metoda, kterou každá dceřinná třída musí přepsat a ve které je definován
+ průběh výpočetního cyklu strategie.
+ Je volána nadřazeným programem v pravidelných intervalech a frekvence těchto
+ volání reprezentuje výpočetní frekvenci strategie.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Je zřejmé, že výpočetní frekvence spolu s aktualizací stavů hry je v celé
+ míře řízena nadřazeným programem, který modul strategie využívá.
+ Modul strategie je tedy v podstatě 
+\begin_inset Quotes gld
+\end_inset
+
+pouze
+\begin_inset Quotes grd
+\end_inset
+
+ zapouzdřená logika výpočtu rozhodnutí pro zadaný stav hry.
+ Vývojový diagram znázorňující průběh řídících metod strategie lze vidět
+ na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Vývojový-diagram-průběhu"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/vyvdiag_metody.pdf
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Vývojový-diagram-průběhu"
+
+\end_inset
+
+Vývojový diagram průběhu řídících metod třídy 
+\emph on
+BaseStrategy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Zpracování polohy puku
+\end_layout
+
+\begin_layout Standard
+Při obdržení nových dat o poloze puku 
+\begin_inset Formula $\vec{p_{0}}$
+\end_inset
+
+ je z pohledu strategie nutné rozhodnout, zda nové data odpovídají vypočítané
+ trajektorii v minulém cyklu nebo zda nenastal odraz a tím i změna pohybu
+ puku.
+ Jevem, který značně komplikuje toho rozhodování je právě šum detekovaných
+ poloh z kamery.
+ Proto byl navrhnut algoritmus minimalizující chybné detekování odrazu puku
+ založený na analýze historie doposud obdržených dat.
+\end_layout
+
+\begin_layout Standard
+Každá příchozí informace o poloze puku 
+\begin_inset Formula $\vec{p_{0}}$
+\end_inset
+
+ je umístěna do zásobníku historie a je jí přiřazena časová známka 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+ odpovídající času, kdy byly data obdrženy a speciální stavová proměnná
+ 
+\emph on
+
+\begin_inset Formula $state$
+\end_inset
+
+, 
+\emph default
+která může nabývat následující stavy:
+\end_layout
+
+\begin_layout Itemize
+ACCURATE
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Reprezentuje záznam polohy puku, který lze použít pro výpočet aktuální trajektor
+ie a rychlosti pohybu.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+INACCURATE
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Reprezentuje záznam polohy puku, který lze použít pro výpočet aktuální trajektor
+ie a rychlosti pohybu, ale výsledky nemusí být kvůli nesplněným podmínkám
+ přesné (například při pomalu se pohybujícím puku má šum detekovaných poloh
+ mnohonásobně vyšší vliv na vypočítanou trajektorii než při rychlostech
+ vyšších).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+USELESS
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Reprezentuje záznam polohy puku, který nelze použít pro výpočet trajektorie
+ ani rychlosti puku.
+ S velkou pravděpodobností tedy nastal odraz puku někdy v čase po tomto
+ záznamu.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Na rozdíl od časové známky se tyto stavy mohou u záznamů v zásobníku změnit.
+ Vývojový diagram algoritmu detekující odraz puku a spravující záznamník
+ lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Vývojový-diagram-algoritmu"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/initialCheck.png
+	lyxscale 30
+	width 100line%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Vývojový-diagram-algoritmu"
+
+\end_inset
+
+Vývojový diagram algoritmu detekce odrazu puku
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Při vložení nové polohy 
+\begin_inset Formula $\vec{p_{0}}$
+\end_inset
+
+ do zásobníku se indexy ostatních záznamů inkrementují 
+\begin_inset Formula $\vec{p_{i}}\rightarrow\vec{p_{i+1}}$
+\end_inset
+
+ a záznam s indexem větším jak maximální velikost záznamníku 
+\begin_inset Formula $n$
+\end_inset
+
+ je zahozen.
+ Ideální velikost 
+\begin_inset Formula $n$
+\end_inset
+
+ závisí na frekvenci nových příchozích poloh z kamery - tedy frekvenci detekce
+ kamery.
+ Experimentálně byla zjištěna dostatečná velikost zásobníku 
+\begin_inset Formula $n$
+\end_inset
+
+ taková, aby byla schopná udržet historii za poslední vteřinu pohybu.
+ Pro kameru detekující polohu puku průměrně 80 krát za vteřinu tomu odpovídá
+ velikost 
+\begin_inset Formula $n=80$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Při výpočtu trajektorie a rychlosti puku se pak prochází zásobník od nejstaršího
+ záznamu 
+\begin_inset Formula $\vec{p_{n}}$
+\end_inset
+
+ po nejnovější 
+\begin_inset Formula $\vec{p_{0}}$
+\end_inset
+
+.
+ První nalezený záznam se stavem jiným než 
+\emph on
+USELESS 
+\begin_inset Formula $\vec{p_{u}}$
+\end_inset
+
+
+\emph default
+ je následně využit pro výpočet aktuální rychlosti 
+\begin_inset Formula $\vec{v}$
+\end_inset
+
+ a směru pohybu puku 
+\begin_inset Formula $\vec{s}$
+\end_inset
+
+.
+ Odečtením vektoru polohy 
+\emph on
+
+\begin_inset Formula $\vec{p_{u}}$
+\end_inset
+
+
+\emph default
+ od aktuálně nejnovější polohy 
+\begin_inset Formula $\vec{p_{0}}$
+\end_inset
+
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:krok"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) je zjištěn takzvaný krokový
+\emph on
+ 
+\emph default
+vektor 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\vec{k}=\vec{p_{0}}-\vec{p_{u}},\label{eq:krok}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+který reprezentuje aktuální směr pohybu puku.
+ Podělením krokového
+\emph on
+ 
+\emph default
+vektoru 
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+ rozdílem časových známek nejnovějšího záznamu 
+\begin_inset Formula $i=0$
+\end_inset
+
+ s nalezeným záznamem v záznamníku 
+\begin_inset Formula $i=u$
+\end_inset
+
+ pak dostáváme aktuální rychlost puku definovanou vztahem (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:rychlost_puku"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\begin_inset Formula 
+\begin{equation}
+\vec{v}=\frac{\vec{k}}{t_{0}-t_{u}},\label{eq:rychlost_puku}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+kde 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+ je časová známka nejnovějšího záznamu a 
+\begin_inset Formula $t_{u}$
+\end_inset
+
+ je časová známka záznamu zvoleného pro výpočet.
+ Znázornění detekce odrazu v simulaci lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Znázornění-detekce-odrazu"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/odraz_hokejka.pdf
+	width 100line%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Znázornění-detekce-odrazu"
+
+\end_inset
+
+Znázornění detekce odrazu pomocí analýzy historie poloh puku 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Následný algoritmus výpočtu trajektorie z takto zpracovaných dat je pak
+ založen na principech popsaných v podkapitole 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Odraz-puku-od"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Navržené strategie
+\end_layout
+
+\begin_layout Standard
+Celkově byly v rámci práce navrženy čtyři různé strategie s rozdílným stylem
+ hry.
+ Tímto bylo kromě možnosti testování jejich efektivity simulováním her proti
+ sobě umožněno i nastavení požadované strategie při hře proti lidskému protihráč
+i.
+ Obtížnost hry proto nemusela být definována pouze omezením rychlosti pohybu
+ robotické hokejky ale i samotným stylem hrané hry, navozující tak pocit,
+ že se robotický hráč s nastavenou vyšší obtížností stává nejen rychlejší,
+ ale i chytřejší.
+ Stručný popis vlastností jednotlivých strategií lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Navržené-typy-strategií"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Vývoj strategií byl mimo jiné založen i na znalostech osvědčených herních
+ stylů profesionálních hráčů přiblížených v kapitole 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Styl-hry"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/strategie.pdf
+	width 100line%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Navržené-typy-strategií"
+
+\end_inset
+
+Navržené typy strategií pro RVH
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vzhledem ke komplexnosti každé ze strategií a výpočtů k nim potřebným bude
+ jejich popis velice zjednodušen.
+ Úplný algoritmus lze najít v přiložených zdrojových souborech.
+\end_layout
+
+\begin_layout Subsubsection
+Strategie A
+\end_layout
+
+\begin_layout Standard
+Cílem návrhu Strategie A bylo využití vnitřních stavů pro umožnění rozhodování
+ nejen na základě aktuálního stavu hry, ale i na jeho historii.
+ Využívá základní algoritmy obrany a útoku.
+ Zjednodušený vývojový diagram rozhodování lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Vývojový-diagram-rozhodování"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/strategieA2.pdf
+	width 100line%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Vývojový-diagram-rozhodování"
+
+\end_inset
+
+Vývojový diagram algoritmu rozhodování strategie A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Strategie B
+\end_layout
+
+\begin_layout Standard
+Strategie B oproti strategii A nevyužívá vnitřní stavy a rozhodování tak
+ závisí pouze na aktuálním stavu hry.
+ V každém cyklu ale přepočítává odhadovanou pozici puku v čase, kdy robotická
+ hokejka dosáhne žádané polohy.
+ Tímto je odhadován stav hry v budoucnu a zajištěna tak přesnější interakce
+ s pohybujícím se pukem.
+ Zjednodušený vývojový diagram algoritmu rozhodování lze vidět na obrázku
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Vývojový-diagram-algoritmu-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/strategieB.pdf
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Vývojový-diagram-algoritmu-1"
+
+\end_inset
+
+Vývojový diagram algoritmu rozhodování strategie B
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Strategie C
+\end_layout
+
+\begin_layout Standard
+Strategie C vznikala jako kombinace strategie A a strategie B s dodatečným
+ laděním obranných a útočných algoritmů v simulačním prostředí.
+ Velký důraz byl kladen na využívání odhadované budoucí polohy puku při
+ útočných střelách robotického hráče.
+ Zjednodušený vývojový diagram algoritmu rozhodování lze vidět na obrázku
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Vývojový-diagram-algoritmu-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/strategieC.pdf
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Vývojový-diagram-algoritmu-2"
+
+\end_inset
+
+Vývojový diagram algoritmu rozhodování strategie C
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Strategie D
+\end_layout
+
+\begin_layout Standard
+Strategie D vykazuje ze všech strategií nechytřejší chování.
+ Oproti strategii C byl výrazně vylepšen algoritmus útoku s přesnějším mířením
+ a možností plánovaného útoku odrazem přes mantinely.
+ Náhodné prvky v rozhodování zajišťují nepředvídatelnost hry a schopnost
+ zastavit pohybující puk pak snadnější přípravu útočné pozice (viz obrázek
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Názorné-schéma-pohybu"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Vývoj rozhodovacího algoritmu byl výrazně ovlivněn analýzou stylů hry profesioná
+lních hráčů zmíněných v podkapitole 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Styl-hry"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Velice zjednodušený vývojový diagram algoritmu rozhodování lze vidět na
+ obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Vývojový-diagram-algoritmu-3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/strategieD.pdf
+	lyxscale 30
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Vývojový-diagram-algoritmu-3"
+
+\end_inset
+
+Vývojový diagram algoritmu rozhodování strategie D
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Detekce-puku"
+
+\end_inset
+
+Detekce puku
+\end_layout
+
+\begin_layout Standard
+Základem pro dobře hrající strategii je co nejpřesnější a často aktualizovaná
+ informace a aktuální poloze puku.
+ Ta je detekována na herní ploše RVH pomocí kamery připojené k řídící jednotce
+ Raspberry Pi 4B, která jednotlivé snímky zpracovává.
+ Kromě spolehlivé a co nejpřesnější detekce je zároveň nutné detekovat puk
+ s co největší frekvencí.
+ S vyšším rozlišením pořizovaných snímků roste díky více informacím přesnost
+ detekce, ovšem nutnost zpracování více pixelů výrazně prodlužuje dobu pořízení
+ a zpracování snímku.
+ Iterativním postupem byla zjištěna ideální kombinace rozlišení a rychlosti
+ snímání, která odpovídala hodnotám 320x192 pixelů na snímek respektive
+ 70-80 zpracovaných snímků za vteřinu.
+\end_layout
+
+\begin_layout Standard
+Kromě algoritmu pro detekování puku na snímku hrací plochy byly v rámci
+ práce navrženy pomocné algoritmy pro automatické vyvážení bílé barvy kamery
+ v aktuálních světelných podmínkách a automatické rozpoznaní hledané barvy
+ puku.
+ Tyto pomocné algoritmy výrazně urychlují kalibraci při změně světelných
+ podmínek, ve kterých se RVH nachází respektive při výměně stávajícího puku
+ za puk s jinou barvou.
+ Všechny tyto automaticky zjišťované parametry spolu s dalšími pak bylo
+ navíc umožněno doladit manuálně skrze uživatelské rozhraní, které je více
+ přiblíženo v kapitole 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Softwarová-implementace"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Snímání a detekce puku
+\end_layout
+
+\begin_layout Standard
+Pro jednoduchou integraci všech softwarových modulů bylo zpracování snímků
+ z kamery (stejně jako ostatní funkcionalita RVH) implementováno v jazyce
+ Python.
+ Pro komunikaci s kamerovým modulem byla využita knihovna PiCamera a pro
+ usnadnění rozpoznaní puku na jednotlivých snímcích potom knihovna OpenCV.
+\end_layout
+
+\begin_layout Standard
+Pro maximální využití dostupného výkonu byl proces získávání snímku z kamery
+ a následné zpracování paralelizován.
+ Byly vytvořeny dvě vlákna.
+ První pro obsluhu kamery a ukládání nejaktuálnějšího snímku do paměti a
+ druhé pro zpracování nejaktuálnější snímku uloženého v paměti a detekce
+ polohy puku.
+ Algoritmus detekce tak nemusel při každém cyklu čekat na nový snímek, ale
+ průběžně zpracovával nejnovější snímky v paměti zatímco první vlákno nepřetržit
+ě nejnovější snímek aktualizovalo.
+ Znázorněný proces paralelního zpracování snímku lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Proces-paralelního-snímání"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/parelelni_kamera.pdf
+	width 70line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Proces-paralelního-snímání"
+
+\end_inset
+
+Proces paralelního snímání a zpracování snímku
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Samotná detekce je založena na algoritmu rozpoznávání objektů pomocí barvy
+ pixelů popsaném v podkapitole 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Algoritmy-detekce"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Pro stabilnější výsledky je po vytvoření masky snímku (A) provedena série
+ erozí a dilatací shluků pixelů spadající svou barvou do hledaného intervalu.
+ Tím se odstraní malé shluky, které mohly v masce vzniknout.
+ Pro takto vyfiltrované shluky pak algoritmus nalezne jejich opisující kružnice
+ (C).
+ Kružnice s menšími poloměry než nastavitelná hodnota počtu pixelů jsou
+ ignorovány.
+ Střed největší nalezené kružnice je potom požadován za souřadnice polohy
+ nalezeného puku v pixelech (D).
+ Celý postup detekce polohy puku z pořízeného snímku je vidět na obrázku
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Postup-detekce-polohy"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/postup_detekce.pdf
+	width 90line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Postup-detekce-polohy"
+
+\end_inset
+
+Postup detekce polohy puku ze snímku.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Výsledné souřadnice polohy v pixelech jsou poté přepočítány do souřadnicového
+ systému stolu pomocí transformační matice (viz obrázek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Transformace-souřadnic-polohy"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ Ta je vytvářena při mapování polohy rohů hřiště na snímcích z kamery.
+ Více o implementované kalibraci polohy hřiště bude zmíněno v kapitole 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Softwarová-implementace"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Poloha je nakonec filtrována speciálním filtrem navrženým a využívaným již
+ v bakalářské práci autora z roku 2018 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-37"
+literal "false"
+
+\end_inset
+
+.
+ Filtr využívá dodatečnou informaci o maximální hodnotě šumu, díky které
+ oproti klasické dolní propusti rychle reaguje na změny filtrované hodnoty,
+ které se šumem nesouvisí.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/tranformace_souradnic.pdf
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Transformace-souřadnic-polohy"
+
+\end_inset
+
+Transformace souřadnic polohy puku v pixelech do souřadnicového systému
+ RVH.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Automatické-vyvážení-bílé"
+
+\end_inset
+
+Automatické vyvážení bílé
+\end_layout
+
+\begin_layout Standard
+Použitý kamerový modul sám o sobě automatické vyvážení bíle využíval.
+ Výsledky byly ale zejména v umělém osvětlení nedostatečné.
+ Nejen, že bílá herní deska se na snímcích často zbarvovala do červena,
+ ale zároveň se v průběhu snímání vyvážení neustále měnilo, což pro účely
+ stabilního vyhledávání neměnící se barvy nebylo vhodné.
+\end_layout
+
+\begin_layout Standard
+Byl proto navržen alternativní způsob automatického vyvážení bíle barvy,
+ které po dokončení až do dalšího manuálního spuštění funkce uzamklo nalezené
+ hodnoty.
+ Hodnoty násobicích složek (hodnoty, kterými se násobí úroveň modré a červené
+ barvy oproti barvě zelené zachycené senzorem kamery) se tak nastavily vždy
+ při počáteční kalibraci stolu a po dobu snímání zůstávaly konstantní.
+\end_layout
+
+\begin_layout Standard
+Základem algoritmu byl předpoklad, že kamera vždy sleduje plochu, kde většina
+ pixelů odpovídá ideální bílé barvě.
+ To v případě kamery umístěné nad bílou herní plochou RVH platí vždy.
+ Kamera tak má vždy k dispozici přesnou referenci pro co nejpřesnější vyvážení.
+ 
+\end_layout
+
+\begin_layout Standard
+Matice RGB pixelů reprezentující aktuální snímek byla upravena tak, že od
+ hodnot RGB každého pixelu byla odečtena jeho G složka.
+ Například pixel s RGB vektorem 
+\begin_inset Formula $[100,80,70]$
+\end_inset
+
+ by po této úpravě byl roven vektoru 
+\begin_inset Formula $[20,0,-10]$
+\end_inset
+
+.
+ Takto upravená matice nereprezentovala barvy jednotlivých pixelů, ale rozdíl
+ R a B složek od G složky.
+ V takové matici vektor 
+\begin_inset Formula $[0,0,0]$
+\end_inset
+
+ reprezentuje pixel s libovolným odstínem bílé barvy (bílá, šedá nebo černá),
+ ale bez jakéhokoliv zbarvení.
+ Pro nalezení referenčního pixelu byl pak využit K-means algoritmus, který
+ všechny takto upravené pixely rozdělil na 8 shluků (hodnota s nejspolehlivějším
+i výsledky zjištěná experimentálně).
+ Shluk s největším počtem pixelů byl potom označen jako 
+\emph on
+referenční shluk
+\emph default
+ a z něho náhodně vybraný pixel jako 
+\emph on
+referenční pixel
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+V několika iteracích byly pomocí referenčního pixelu upravovány hodnoty
+ vyvážení bíle tak, že se k modré a červené složce přičítala malá část rozdílu
+ R respektive B složky od G složky vektoru referenčního pixelu.
+ V každé iteraci se potom celý postup opakoval až do dostatečného přiblížení
+ hodnoty referenčního vektoru k hodnotě [0, 0, 0].
+ Tímto bylo zajištěno správné nalezení referenční bílé barvy i při špatných
+ světelných podmínkách.
+ Nalezení referenčního shluku po aplikaci algoritmu lze vidět na obrázku
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Nalezení-referenčního-shluku"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/k_means.pdf
+	width 100line%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Nalezení-referenčního-shluku"
+
+\end_inset
+
+Nalezení referenčního shluku pomocí K-means pro automatické vyvážení bílé
+ barvy.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Automatické rozpoznání barvy puku
+\end_layout
+
+\begin_layout Standard
+Podobně jako algoritmus automatického vyvážení bílé barvy i algoritmus automatic
+kého rozpoznání barvy puku vznikl zejména pro výrazné urychlení počáteční
+ kalibrační fáze RVH při změně okolních světelných podmínek.
+ Algoritmus obdobně využívá K-means pro zjištění nejčetnějšího shluku pixelů
+ s podobnou barvou (viz obrázek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Postup-analýzy-barvy"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) ale s tím rozdílem, že neupravuje hodnoty RGB vektoru jednotlivých pixelů
+ jako tomu bylo zapotřebí v 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Automatické-vyvážení-bílé"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Pro správné rozpoznání hledané barvy je proto nutné puk dostatečně přiblížit
+ kameře.
+ Důležité je také dodržet posloupnost akcí, tedy před samotným rozpoznáním
+ barvy puku automaticky nastavit vyvážení bílé barvy pomocí algoritmu 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Automatické-vyvážení-bílé"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Po spuštění algoritmu skrze uživatelské rozhraní program vyčká několik vteřin
+ pro umožnění přiblížení puku ke kameře.
+ Poté je na částečný výřez vyfoceného snímku aplikován postup popsaný výše.
+ Výsledná barva nejčetnějšího shluku je považována za hledanou barvu puku
+ 
+\begin_inset Formula $[R_{p},G_{p},B_{p}]$
+\end_inset
+
+.
+ Ta je převedena na HSV reprezentaci barev 
+\begin_inset Formula $[H_{p},S_{p},V_{p}]$
+\end_inset
+
+ a intervaly hledané barvy nastaveny na spodní hodnotu: 
+\begin_inset Formula $[H_{p}-15,S_{p}-75,V_{p}-75]$
+\end_inset
+
+ a horní hodnotu: 
+\begin_inset Formula $[H_{p}+15,S_{p}+75,V_{p}+75]$
+\end_inset
+
+.
+ Tento interval hodnot je následně využíván při detekci hledané barvy.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/analyza_barvy.pdf
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Postup-analýzy-barvy"
+
+\end_inset
+
+Postup analýzy barvy puku.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Softwarová-implementace"
+
+\end_inset
+
+Softwarová implementace
+\end_layout
+
+\begin_layout Standard
+Implementace ovládacího softwaru spolu s vytvořením uživatelského rozhraní
+ pro intuitivní ovládání prvků RVH skrze dotykový displej sice nebylo vymezeno
+ v cílech práce, ale bylo neméně důležitou součástí projektu.
+ Celý řídící software běžel na mikropočítači Raspberry pi modelu 4B v jazyce
+ Python, s připojeným obrazovým výstupem k dotykovému 7'' displeji od firmy
+ Waveshare.
+ Po startu systému se řídící program spolu s uživatelským rozhraním automaticky
+ spustil na celou obrazovku displeje bez nutnosti manuálního zásahu.
+ Pro maximální využití dostupného výkonu bylo co nejvíce úkonů napříč celou
+ softwarovou implementací RVH paralelizováno do vlastních výpočetních vláken
+ pomocí knihovny 
+\emph on
+Threading
+\emph default
+.
+ Po ošetření korektní výměny dat mezi vlákny tak všechny hlavní řídící procesy
+ běžely nezávisle na sobě a využívaly veškerý dostupný výkon procesoru.
+ 
+\end_layout
+
+\begin_layout Standard
+V této kapitole bude stručně popsána konfigurace řídící jednotky Raspberry
+ Pi, nastíněna celková struktura řídícího softwaru spolu s vysvětlením pracovníh
+o cyklu programu, přiblíženo uživatelské rozhraní navržené od základu pro
+ RVH a vysvětlena komunikace mezi řídící jednotkou a Arduinem, zajištující
+ správu hardwarových prvků stolu, čímž se zabývala práce Dominika Jaška
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-37"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Konfigurace Raspberry Pi 4B
+\end_layout
+
+\begin_layout Standard
+instalace knihoven
+\end_layout
+
+\begin_layout Standard
+nastavení displeje
+\end_layout
+
+\begin_layout Standard
+přetaktování
+\end_layout
+
+\begin_layout Standard
+start se spuštěním systému
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Struktura-programu"
+
+\end_inset
+
+Struktura programu
+\end_layout
+
+\begin_layout Standard
+Struktura řídícího softwaru RVH se v některých oblastech podobala struktuře
+ simulačního softwaru, na rozdíl od simulace ale bylo nutné komunikovat
+ s Arduinem, integrovat komplexní uživatelské rozhraní pro plnou kontrolu
+ nad všemi důležitými aspekty stolu a spravovat modul kamery spolu se zpracování
+m přijímaných snímků.
+\end_layout
+
+\begin_layout Standard
+Logika programu byla podobně jako u simulace rozdělena mezi jednotlivé třídy
+ spravující určitou ucelenou část problematiky, jak je vidět na obrázku
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Znázornění-struktury-řídícího"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/struktura_RVH.pdf
+	width 100line%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Znázornění-struktury-řídícího"
+
+\end_inset
+
+Znázornění struktury řídícího softwaru RVH.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hlavní třída 
+\emph on
+App 
+\emph default
+je specifická tím, že integruje logiku hlavní smyčky programu spolu s ovládáním
+ uživatelského rozhraní.
+ Více bude o implementaci uživatelského rozhraní pojednáno v podkapitole
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Uživatelské-rozhraní"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Zároveň má hlavní třída přístup ke všem podtřídám RVH a zajišťuje tak komunikac
+i mezi nimi buď přeposíláním dat, nebo pomocí odkázání referencí.
+ Například ke třídě 
+\emph on
+Settings, 
+\emph default
+obsahující veškeré nastavitelné parametry RVH, mají přístup všechny ostatní
+ podtřídy skrz referenci na její instanci uloženou pod hlavní třídou 
+\emph on
+App
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Logika každé podtřídy využívá jedno nebo více vlastních vláken pro paralelní
+ zpracovávání jednotlivých úkonů.
+ Třída 
+\emph on
+App
+\emph default
+ pak zajišťuje bezkonfliktní výměnu důležitých dat.
+ Kromě efektivnějšího využití dostupného výkonu má takto paralelní výpočetní
+ struktura obrovskou výhodu ve vzájemné nezávislosti časové náročnosti jednotliv
+ých procedur.
+ Například třída 
+\emph on
+Serial, 
+\emph default
+která zasílá a přijímá data z pomocné řídící jednotky (Arduina) spravující
+ hardwarové prvky stolu, nutně potřebuje kontrolovat sériovou komunikaci
+ s vysokou frekvencí.
+ Pokud ale Arduino začne posílat vyjímečně dlouhou zprávu, celý přenos zabere
+ mnohonásobně delší dobu než byla původní doba cyklu kontroly komunikace.
+ V případě, že by třída 
+\emph on
+Serial 
+\emph default
+neběžela pod vlastním vláknem, celé řízení stolu by po dobu přenosu zprávy
+ 
+\begin_inset Quotes gld
+\end_inset
+
+zamrzlo
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Naopak při využití paralelního zpracování může jakákoliv třída 
+\begin_inset Quotes gld
+\end_inset
+
+zamrznout
+\begin_inset Quotes grd
+\end_inset
+
+ na jakkoliv dlouhou dobu bez omezení výpočetní rychlosti ostatních tříd.
+ Další výhodou je umožnění probíhání výpočetních cyklů každé třídy s různou
+ frekvencí, takže například třída 
+\emph on
+Camera
+\emph default
+ může detekovat polohu puku na nových snímcích 70 krát za vteřinu, zatímco
+ třída 
+\emph on
+Game 
+\emph default
+aktualizovat žádanou polohu robotické hokejky 170 krát za vteřinu.
+ Velice zjednodušené znázornění výpočetního procesu vláken celého programu
+ lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Znázornění-výpočetního-procesu"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/paralelni_procesy.pdf
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Znázornění-výpočetního-procesu"
+
+\end_inset
+
+Znázornění výpočetního procesu vláken řídícího programu RVH
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Uživatelské-rozhraní"
+
+\end_inset
+
+Uživatelské rozhraní
+\end_layout
+
+\begin_layout Standard
+Uživatelské rozhraní zajišťující grafický výstup stavů RVH a možnost interakce
+ s ovládacími prvky vznikalo za pomocí python knihovny 
+\emph on
+Kivy, 
+\emph default
+která se zaměřuje na usnadnění tvorby UI s moderním designem a podporou
+ dotykového ovládání.
+ Nebyla však využita žádná šablona a veškeré prvky byly designovány od základu
+ pro využití pouze na RVH.
+ Díky tomu mohlo vzniknout intuitivní a na pohled příjemné prostředí pro
+ rychlé ovládání aktuální hry, nastavení různých parametrů stolu, kontrolu
+ stavů nebo i přehled statistik her a možnost procházení historie odehraných
+ zápasů spolu s nahranými krátkými klipy důležitých okamžiků hry.
+\end_layout
+
+\begin_layout Standard
+Kvůli rozsáhlé komplexnosti a obsáhlosti tématu a faktu, že vytvoření uživatelsk
+ého rozhraní nebylo tématem cílů práce bude popis výsledného produktu velice
+ zjednodušen.
+ Pro pochopení všech okolností, které souviseli s návrhem a implementací
+ UI pro RVH a přehled designu jednotlivých sekcí rozhraní lze nahlédnout
+ do přiloženého zdrojového kódu respektive na fotky stránek v příloze 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Odkaz na přílohu
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Struktura programu a základy 
+\emph on
+Kivy
+\end_layout
+
+\begin_layout Standard
+Knihovna 
+\emph on
+Kivy
+\emph default
+ je v základu velice jednoduchá.
+ Kód potřebný pro vytvoření základní aplikace zobrazující text uprostřed
+ okna vypadá následovně:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg:Základní-aplikace-vytvořená"
+
+\end_inset
+
+Základní aplikace vytvořená pomocí knihovny Kivy.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+import
+\series default
+ kivy
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+from
+\series default
+ kivy.app 
+\series bold
+import
+\series default
+ App 
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+from
+\series default
+ kivy.uix.label 
+\series bold
+import
+\series default
+ Label
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+class
+\series default
+ MyApp(App):
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\series bold
+def
+\series default
+ build(self): 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\series bold
+return
+\series default
+ Label(text='Hello world')
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout LyX-Code
+
+\series bold
+if
+\series default
+ __name__ == '__main__': 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+MyApp().run()
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Za předpokladu správně nainstalované knihovny se po spuštění skriptu otevře
+ okno s textem 
+\begin_inset Quotes gld
+\end_inset
+
+Hello Word
+\begin_inset Quotes grd
+\end_inset
+
+ uprostřed.
+ Metoda build svojí návratovou hodnotou definuje, co se v okně zobrazí.
+ Widget 
+\emph on
+Label 
+\emph default
+tak lze nahradit libovolným jiným 
+\emph on
+Kivy
+\emph default
+ widgetem, který sám může obsahovat další widgety.
+ Ve třídě 
+\emph on
+MyApp 
+\emph default
+pak můžou být umístěny i metody obsahující logiku aplikace.
+ Kompletní popis postupu vytváření aplikací pomocí knihovny 
+\emph on
+Kivy 
+\emph default
+lze nalázt v online dokumentaci knihovny 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kivy_guide"
+literal "false"
+
+\end_inset
+
+.
+ Z příkladu je patrná možnost kombinace kódu definující vzhled spolu s logikou
+ aplikace.
+ Zatímco pro jednoduché projekty může být taková struktura výhodou, pro
+ komplexnější aplikace lze s výhodou část definující vzhled a rozvržení
+ od logiky oddělit.
+ 
+\emph on
+Kivy 
+\emph default
+pro tyto účely využívá speciální .kv soubor definující vzhled pomocí zjednodušené
+ stromové struktury.
+ Ten se pak interně zpracovává a překládá na syntaxi Pythonu.
+ Pro více informací lze opět nahlédnou do oficiální dokumentace 
+\emph on
+Kivy
+\emph default
+ knihovny 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kivy_guide"
+literal "false"
+
+\end_inset
+
+.
+ Jednoduchý příklad definice widgetu s textem 
+\begin_inset Quotes gld
+\end_inset
+
+Hello world
+\begin_inset Quotes grd
+\end_inset
+
+ a dvěma tlačítky bez přidělené funkce pomocí .kv souboru:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout LyX-Code
+MyRootWidget: 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+BoxLayout: 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+Label:
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+text: 
+\begin_inset Quotes gld
+\end_inset
+
+Hello world
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+Button: 
+\end_layout
+
+\begin_layout LyX-Code
+Button:
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Příklad definice widgetu MyRootWidget se dvěma tlačítky pomocí .kv souboru
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+V tomto případě by pro správné spuštění aplikace bylo potřeba hlavní skript
+ (algoritmus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg:Základní-aplikace-vytvořená"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) mírně upravit:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Hlavní skript aplikace se rozvržením widgetu MyRootWidget definovaným odděleně.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+import
+\series default
+ kivy
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+from
+\series default
+ kivy.app 
+\series bold
+import
+\series default
+ App 
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+from 
+\series default
+kivy.uix.boxlayout
+\series bold
+ import 
+\series default
+BoxLayout
+\end_layout
+
+\begin_deeper
+\begin_layout Plain Layout
+
+\series bold
+class
+\series default
+ MyRootWidget(BoxLayout):
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+pass
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\series bold
+class
+\series default
+ MyApp(App):
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\series bold
+def
+\series default
+ build(self): 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+
+\series bold
+return
+\series default
+ MyRootWidget()
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout LyX-Code
+
+\series bold
+if
+\series default
+ __name__ == '__main__': 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+MyApp().run()
+\end_layout
+
+\end_deeper
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Knihovna interně načetla .kv soubor a přiřadila definici vzhledu k deklarované
+ třídě 
+\emph on
+MyRootWidget, 
+\emph default
+jejíž instance je vrácena metodou 
+\emph on
+build
+\emph default
+ a tím zobrazena v okně aplikace.
+\end_layout
+
+\begin_layout Standard
+Tímto způsobem bylo programováno celé uživatelské rozhraní RVH.
+ Hlavní skript obsahoval logiku softwaru spolu s instancemi podtříd zmíněných
+ v podkapitole 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Struktura-programu"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ a .kv soubor strukturu, navázání interaktivních prvků a definici vzhledu
+ UI.
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Rozvržení a design
+\end_layout
+
+\begin_layout Standard
+Hlavním cílem návrhu UI bylo snadno a rychle dostupné ovládání nejzákladnějších
+ úkonů a okamžitý přehled o důležitých stavech stolu a aktuálně hraného
+ zápasu.
+ Zásadní byla i přehledná navigace a logicky rozvržené jak nastavovací,
+ tak informační obrazovky.
+ Celý design se navíc ladil do zakulaceného stylu připomínající kulatý puk
+ a herní hokejky.
+ Podle aktuálně snímané barvy puku se pak podkreslovali barevné prvky UI.
+ Celé uživatelské prostředí proto vždy ladilo s barvou aktuálně využívaného
+ puku ke hraní.
+ Hlavní a zároveň úvodní obrazovka, využívaná pro spouštění/zastavování
+ zápasu a rychlého přehledu spolu s popisem oblastí UI je vidět na obrázku
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Popis-oblastí-uživatelského"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/popis_UI.pdf
+	width 100line%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Popis-oblastí-uživatelského"
+
+\end_inset
+
+Popis oblastí uživatelského rozhraní RVH.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Prostředí bylo rozvrženo do 3 hlavních oblastí: 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Navigační
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Slouží k navigování mezi jednotlivými obrazovkami formou tlačítek.
+ Aktuální zvolená obrazovka je zvýrazněná zvětšením příslušného tlačítka.
+ Celkově byly navrženy čtyři hlavní obrazovky (Aktuální zápas, Nastavení,
+ Kamera a Herní statistiky), kde každá hlavní může navíc obsahovat podobrazovky.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Obsahová
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Oblast zabírající nejvíce využitelného prostoru určená k zobrazení obsahu
+ aktuálně zvolené obrazovky.
+ Obrazovky Nastavení a Herní statistiky navíc obsahují podobrazovky (viz
+ obrázek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Obrazovka-nastavení-uživatelskéh"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), mezi kterými je na dané obrazovce možné přecházet.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/podobrazovky.pdf
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Obrazovka-nastavení-uživatelskéh"
+
+\end_inset
+
+Obrazovka nastavení uživatelského rozhraní RVH.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Informační
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Úzká oblast zobrazující aktuální údaje o výpočetních frekvencích důležitých
+ paralelních vláken, stavu procesů a datu a času (viz obrázek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Informační-panel-uživatelského"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/panel.pdf
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Informační-panel-uživatelského"
+
+\end_inset
+
+Informační panel uživatelského rozhraní.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+V rámci uživatelského rozhraní bylo vytvořeno několik pomocných funkcionalit,
+ které výrazně ulehčovali konfigurační a testovací procedury RVH.
+\end_layout
+
+\begin_layout Paragraph
+Kalibrace rohů herní desky
+\end_layout
+
+\begin_layout Standard
+Kalibrace rohů herní desky pro správnou transformaci souřadnic nalezeného
+ puku byla prováděna pomocí intuitivního přetáhnutí rohů zeleného čtyřúhelníku
+ na rohy hřiště zobrazené na streamu z kamery.
+ Proces kalibrace rohů herní plochy lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Proces-kalibrace-rohů"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/kalibrace_rohu.png
+	lyxscale 50
+	width 100line%
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Lepší obrázek
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Proces-kalibrace-rohů"
+
+\end_inset
+
+Proces kalibrace rohů herní plochy pomocí uživatelského rozhraní RVH..
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Po dokončení kalibrace potvrzením tlačítka 
+\emph on
+Calibrate field 
+\emph default
+byla vygenerována tranformační matice a uložena do podtřídy 
+\emph on
+Camera, 
+\emph default
+ve které byla využíváná pro přepočet souřadnic nalezeného puku v pixelech
+ na milimetry v souřadnicovém systému RVH (viz kapitola 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Detekce-puku"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ V případě změny pohledu kamery vlivem otřesů nebo výměny konstrukce tak
+ byla zajištěna možnost téměř okamžitého znovu-zprovoznění hry díky zamezení
+ nutnosti úprav samotného zdrojového kódu i u složitějších konfiguračních
+ procesů.
+ Pro pochopení způsobu implementace této funkcionality lze nahlédnout do
+ přiloženého zdrojového kódu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Testování motorů
+\end_layout
+
+\begin_layout Standard
+Pro možnost intenzivního testování dynamiky pohybu robotické hokejky vznikla
+ obrazovka pro dotykové zadávání žádané polohy/rychlosti hokejky, která
+ byla následně odesílaná skrz sériovou linku Arduinu.
+ Ten zajišťoval nízkoúrovňové řízení obou motorů.
+ Obrazovka umožňovala zadávání žádané polohy pomocí dotyku/přetahováním
+ prstu po znázorněné herní ploše.
+ Pro zadávání žádané rychlosti pak bylo možné využít virtuální joystick.
+\end_layout
+
+\begin_layout Standard
+Vizualizace rovněž zobrazovala aktuální polohu hokejky a puku spolu s vypočítano
+u trajektorií pohybu.
+ Obrazovku pro ovládání robotické hokejky lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Obrazovka-uživatelského-rozhraní"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/kalibrace_rohu.png
+	lyxscale 50
+	width 100line%
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Jiný obrázek
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Obrazovka-uživatelského-rozhraní"
+
+\end_inset
+
+Obrazovka uživatelského rozhraní pro ovládání robotické hokejky RVH.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Záznam her
+\end_layout
+
+\begin_layout Standard
+Řídící software také průběžně nahrával každou odehrávanou hru.
+ Kromě základních statistik jako počet gólů a výher byly vyhodnocovány i
+ komplexnější parametry jako počet střel na bránu nebo přesnost míření.
+ Každá důležitá událost v zápase pak byla navíc nahrávána a ukládána do
+ paměti ve formě krátkých klipů.
+ Celková historie zaznamenaných zápasu byla poté vizualizována na vlastní
+ obrazovce (viz obrázek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Obrazovka-historie-zápasu"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Další vlastnosti a funkcionalita uživatelského rozhraní nebude z důvodu
+ obsáhlosti uvedena.
+ Pro více informací lze nahlédnout do přiloženého zdrojového kódu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drawio/historie.pdf
+	lyxscale 50
+	width 80line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Obrazovka-historie-zápasu"
+
+\end_inset
+
+Obrazovka historie zápasu s nahranými klipy důležitých momentů.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Komunikace s řízením pohonů
+\end_layout
+
+\begin_layout Standard
+Pro ovládání většiny hardwarových prvků stolu spravovaných pomocnou nízkoúrovňov
+ou řídící jednotkou (Arduino), bylo nutné zajistit obousměrnou komunikaci
+ mezi Raspberry Pi a Arduinem.
+ Ta byla implementována pomocí sériové linky a zavedeny následující konvence
+ zpráv:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="15" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Směr
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Zpráva
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Význam
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="top" topline="true" leftline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Raspberry->Arduino (R->A)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+home
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+automatická reference robotické hokejky
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+setaccel, [x]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+nastavení akcelerace hokejky na [x]
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+setdeccel, [x]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+nastavení decelerace hokejky na [x]
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+setmaxspeed, [x]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+nastavení maximální rychlosti hokejky na [x]
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+kpgain, [x]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+nastavení parametru regulátoru Kp na [x]
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+p,[x],[y]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+nastavení aktuální žádané polohy hokejky na [x, y]
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+v,[x],[y]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+nastavení aktuální žádané rychlosti hokejky na [x, y]
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fans, [x]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+zapnutí/vypnutí ventilátorů, [x] 
+\begin_inset Formula $\in(0,1)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+leds, [x]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+nastavení jasu osvětlení hrací plochy [x] 
+\begin_inset Formula $\in(0-255)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+solenoid
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+aktivuje solenoid pro vystřelení puku z branky
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+blink
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+zablikání led pásků v brance robotické strany
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A->R
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+[x], [y]; [vx], [vy]; [h]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+poloha hokejky [x, y]; rychlost hokejky [vx, vy]; stav zhomování
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+chyba v důsledku aktivování koncového spínače
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+detekovaná chyba na driveru
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Konvence komunikačních výrazů mezi Raspberry Pi a Arduinem.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Závěr
+\end_layout
+
+\begin_layout Standard
+Závěr ke každému k cílů
+\end_layout
+
+\begin_layout Standard
+Porovnání skore strategii
+\end_layout
+
+\begin_layout Standard
+Spolupráce s Domem
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantomsection
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{
+\backslash
+listfigurename}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantomsection
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{
+\backslash
+listtablename}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantomsection
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{
+\backslash
+listalgorithmcfname}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList algorithm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantomsection
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand
+\backslash
+nomname{Použité zkratky}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{
+\backslash
+nomname}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "auto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+phantomsection
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand
+\backslash
+refname{Seznam použité literatury}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{
+\backslash
+refname}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+literal "false"
+
+\end_inset
+
+Tournament Pro Air Hockey Table.
+ In: Gold-standard-games [online].
+ 3020 N.
+ Water Street Bay City [cit.
+ 2020-03-22].
+ Dostupné z: http://gold-standard-games.com/tournament-pro-air-hockey-table.shtml.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-3"
+literal "false"
+
+\end_inset
+
+FIALA, Dominik.
+ Airhockey_pravidla.
+ Airhockey [online].
+ 2011 [cit.
+ 2020-03-22].
+ Dostupné z: http://www.airhockey.cz/wp-content/uploads/2011/03/Airhockey_pravidla.
+pdf 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+literal "false"
+
+\end_inset
+
+Regulation Air Hockey Table Dimensions.
+ Game Table Planet [online].
+ Harrisburg [cit.
+ 2020-03-22].
+ Dostupné z: https://gametableplanet.com/regulation-air-hockey-table-dimensions/
+ 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-10"
+
+\end_inset
+
+What is the Regulation Air Hockey Puck Size? Game Table Planet [online].
+ Harrisburg [cit.
+ 2020-03-23].
+ Dostupné z: https://gametableplanet.com/what-is-the-regulation-air-hockey-puck-s
+ize/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-11"
+
+\end_inset
+
+Plastic Mallet Pusher Puck.
+ In: Online Shopping UAE [online].
+ [cit.
+ 2020-03-23].
+ Dostupné z: https://bit.ly/2vJGUZ1 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-12"
+
+\end_inset
+
+Mini Air Hockey Pusher Mallet [online].
+ In: .
+ [cit.
+ 2020-03-23].
+ Dostupné z: https://cz.pinterest.com/pin/734860864169276331/ 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-13"
+literal "false"
+
+\end_inset
+
+ROBBINS, Mark.
+ How to Play Air Hockey.
+ In: Youtube [online].
+ 2015 [cit.
+ 2020-03-24].
+ Dostupné z: https://www.youtube.com/watch?v=jAYcpvd8jGE 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-4"
+
+\end_inset
+
+Air Hockey Strategies.
+ Bubble & Air Hockey [online].
+ [cit.
+ 2020-03-24].
+ Dostupné z: https://www.bubbleairhockey.com/air-hockey-strategy.html 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-14"
+literal "false"
+
+\end_inset
+
+OGAWA, M, K IKEUCHI, Y SATO, S KUDOH, T TOMIZAWA, T SUEHIRO a S SHIMIZU.
+ Towards air hockey robot with tactics - Statistical analysis from measurement
+ of eye movement.
+ In: 2012 IEEE International Conference on Mechatronics and Automation [online].
+ IEEE, 2012, s.
+ 34-39 [cit.
+ 2020-04-02].
+ DOI: 10.1109/ICMA.2012.6282343.
+ ISBN 9781467312752.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-15"
+
+\end_inset
+
+W.
+ SPONG, Mark.
+ Impact controllability of an air hockey puck.
+ Systems & Control Letters [online].
+ Elsevier B.V, 2001, 42(5), 333-345 [cit.
+ 2020-04-05].
+ DOI: 10.1016/S0167-6911(00)00105-5.
+ ISSN 0167-6911.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-16"
+
+\end_inset
+
+KOPECKÝ, David.
+ AUTOMATICKÝ VZDUCHOVÝ HOKEJ.
+ Praha, 2017.
+ Bakalářská práce.
+ České vysoké učení technické.
+ Vedoucí práce Zemánek Jiří.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-17"
+
+\end_inset
+
+LEONG, Eric.
+ An Approach to Line-Circle Collision Detection and Response.
+ 2009.
+ William A.
+ Shine Great Neck South High School.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-18"
+
+\end_inset
+
+JAMIESON, Darran.
+ Simulating Circle-Circle Collisions.
+ Evanto Tuts [online].
+ 27 Sep 2012 [cit.
+ 2020-04-06].
+ Dostupné z: https://gamedevelopment.tutsplus.com/tutorials/when-worlds-collide-si
+mulating-circle-circle-collisions--gamedev-769
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-19"
+
+\end_inset
+
+BARA, Matthew, Sneha GOLLAMUDI a Samuel WILLIAMS.
+ Developing an Air Hockey Game in LabVIEW.
+ In: 2017 25th International Conference on Systems Engineering (ICSEng)
+ [online].
+ IEEE, 2017, 2017-, s.
+ 333-336 [cit.
+ 2020-04-06].
+ DOI: 10.1109/ICSEng.2017.65.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-191"
+literal "false"
+
+\end_inset
+
+BISHOP, B.E a M.W SPONG.
+ Vision-based control of an air hockey playing robot.
+ IEEE Control Systems [online].
+ IEEE, 1999, 19(3), 23-32 [cit.
+ 2020-04-08].
+ DOI: 10.1109/37.768537.
+ ISSN 1066-033X.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-20"
+
+\end_inset
+
+MARKUŠ, Nenad, Miroslav FRLJAK, Igor PANDŽIĆ, Jörgen AHLBERG a Robert FORCHHEIME
+R.
+ Object Detection with Pixel Intensity Comparisons Organized in Decision
+ Trees.
+ ArXiv.org [online].
+ Ithaca: Cornell University Library, arXiv.org, 2014 [cit.
+ 2020-04-08].
+ Dostupné z: http://search.proquest.com/docview/2084910553/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-21"
+
+\end_inset
+
+ROSEBROCK, Adrian.
+ OpenCV and Python Color Detection.
+ PyImageSearch [online].
+ August 4, 2014 [cit.
+ 2020-04-08].
+ Dostupné z: https://www.pyimagesearch.com/2014/08/04/opencv-python-color-detectio
+n/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-24"
+
+\end_inset
+
+ROSEBROCK, Adrian.
+ Ball Tracking with OpenCV.
+ In: Learn OpenCV [online].
+ FEBRUARY 11, 2019 [cit.
+ 2020-04-08].
+ Dostupné z: https://www.pyimagesearch.com/2015/09/14/ball-tracking-with-opencv/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-22"
+
+\end_inset
+
+SADEKAR, Kaustubh.
+ Color Detection and Segmentation with OpenCV.
+ In: Learn OpenCV [online].
+ FEBRUARY 11, 2019 [cit.
+ 2020-04-08].
+ Dostupné z: https://www.learnopencv.com/invisibility-cloak-using-color-detection-
+and-segmentation-with-opencv/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-23"
+
+\end_inset
+
+Color Detection Using HSV Color Space.
+ In: MathWorks [online].
+ 24 Jan 2008 [cit.
+ 2020-04-08].
+ Dostupné z: https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submi
+ssions/18440/versions/1/screenshot.jpg
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-25"
+
+\end_inset
+
+ROSEBROCK, Adrian.
+ Detecting Circles in Images using OpenCV and Hough Circles.
+ In: PyImageSearch [online].
+ July 21, 2014 [cit.
+ 2020-04-08].
+ Dostupné z: https://www.pyimagesearch.com/2014/07/21/detecting-circles-images-usi
+ng-opencv-hough-circles/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-26"
+
+\end_inset
+
+KAZÍK, Martin.
+ Houghova transformace pro detekci kružnic.
+ Vysoké učení technické v Brně.
+ Fakulta elektrotechniky a komunikačních technologií, 2009.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-27"
+
+\end_inset
+
+RIEKE, Johannes.
+ Object detection with neural networks.
+ In: Towards data science [online].
+ Jun 12, 2017 [cit.
+ 2020-04-08].
+ Dostupné z: https://towardsdatascience.com/object-detection-with-neural-networks
+-a4e2c46b4491
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-28"
+
+\end_inset
+
+You only look once (YOLO) : unified real time object detection.
+ In: SlideShare [online].
+ [cit.
+ 2020-04-09].
+ Dostupné z: https://www.slideshare.net/AshishKumar207/you-only-look-once-yolo-uni
+fied-real-time-object-detection
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-30"
+
+\end_inset
+
+MENEZES, Richardson Santiago Teles, Helton MAIA a Rafael Marrocos MAGALHAES.
+ Object Recognition Using Convolutional Neural Networks.
+ IntechOpen [online].
+ May 6th 2019 [cit.
+ 2020-04-09].
+ DOI: 10.5772/intechopen.89726.
+ Dostupné z: https://www.intechopen.com/books/recent-trends-in-artificial-neural-n
+etworks-from-training-to-prediction/object-recognition-using-convolutional-neura
+l-networks
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-29"
+
+\end_inset
+
+SAHA, Sumit.
+ A Comprehensive Guide to Convolutional Neural Networks.
+ In: Towards data science [online].
+ Dec 15, 2018 [cit.
+ 2020-04-09].
+ Dostupné z: https://towardsdatascience.com/a-comprehensive-guide-to-convolutiona
+l-neural-networks-the-eli5-way-3bd2b1164a53
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-31"
+
+\end_inset
+
+SIJKOVÁ, Simona.
+ Robotický stolní fotbal - optimalizace snímání hrací plochy.
+ Vysoké učení technické v Brně.
+ Fakulta strojního inženýrství, 2018.
+ 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-32"
+
+\end_inset
+
+In-Sight 7000 Series Vision System, ©2018.
+ Cognex [online].
+ Cognex Corporation [cit.
+ 2018-04-20].
+ Dostupné z: https://www.cognex.com/downloads/in-sight-7000-seriesvision-system-18
+659 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-33"
+
+\end_inset
+
+MAHESH.
+ Real time Surveillance System using Raspberry Pi 2 and Webcam.
+ Rhydolabz [online].
+ June 3, 2016 [cit.
+ 2020-04-12].
+ Dostupné z: https://www.rhydolabz.com/wiki/?p=16181
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-34"
+
+\end_inset
+
+Raspberry Pi camera module.
+ Penguin Tutor [online].
+ 29 May 2013 [cit.
+ 2020-04-12].
+ Dostupné z: http://www.penguintutor.com/news/raspberrypi/raspi-camera
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-35"
+
+\end_inset
+
+Adafruit Raspberry Pi Camera Board v2.
+ In: Mouser [online].
+ [cit.
+ 2020-04-12].
+ Dostupné z: https://cz.mouser.com/new/adafruit/adafruit-raspberry-pi-camera-board
+-v2/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-37"
+
+\end_inset
+
+SLÁMA, O.
+ Robotický stolní fotbal – řízení herních os.
+ Brno: Vysoké učení technické v Brně, Fakulta strojního inženýrství, 2018.
+ 71 s.
+ Vedoucí bakalářské práce Ing.
+ Roman Parák.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-36"
+
+\end_inset
+
+Alsalihi, A.; Najjar, K.; Van Scoy, B.; Zifer, J.
+ Automated Foosball Table [PDF dokument].
+ The University of Akron, November 28, 2011 [cit.
+ 2020-04-12].
+ Supervisor Dr.
+ Hartley, Dr.
+ Tran.
+ Dostupný z: <https://www.uakron.edu/dotAsset/1e2fb3d4-8c59- 475e-9473-ed98b2504f1
+7.pdf>.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "kivy_guide"
+literal "false"
+
+\end_inset
+
+Programming Guide: Kivy Basics.
+ Kivy [online].
+ [cit.
+ 2020-06-12].
+ Dostupné z: https://kivy.org/doc/stable/guide/basic.html
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-37"
+
+\end_inset
+
+JAŠEK, Dominik.
+ Vzdušný hokej - realizace a návrh automatického hráče.
+ Brno, 2020.
+ Dostupné také z: https://www.vutbr.cz/studenti/zav-prace/detail/125432.
+ Diplomová práce.
+ Vysoké učení technické v Brně, Fakulta strojního inženýrství, Ústav automatizac
+e a informatiky.
+ Vedoucí práce Radomil Matoušek.
+\end_layout
+
+\end_body
+\end_document
