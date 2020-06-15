@@ -374,12 +374,6 @@ literal "false"
  Následně budou navrženy čtyři herní strategie s rozdílným stylem hry.
  V předposlední kapitole bude přiblížena implementace detekce puku s pomocí
  kamerového modulu z rodiny produktů Raspberry a knihovny opencv.
- Na závěr bude stručně popsána implementace jednotlivých softwarových částí
- na reálném RVH spolu s vytvořením grafického uživatelského rozhraní pro
- snadné a přehledné ovládání prvků stolu.
- Popis jednotlivých procedur bude z důvodu velké obsáhlosti velice zestručněn.
- Pro plné pochopení implementace jednotlivých částí práce lze nahlédnout
- do přiloženého zdrojového kódu.
 \end_layout
 
 \begin_layout Standard

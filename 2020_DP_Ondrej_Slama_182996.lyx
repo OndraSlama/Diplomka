@@ -346,6 +346,45 @@ Oblíbená arkádová hra vzdušný hokej vznikla jako variace stolního hokeje
 \end_layout
 
 \begin_layout Standard
+Práce se zabývá simulační realizací hry spolu s návrhem strategie, detekcí
+ puku na herní ploše a implementací řídícího softwaru stolu s uživatelským
+ rozhraním na jednodeskovém počítači Raspberry Pi a dotykovém displeji od
+ společnosti Waveshare.
+ V úvodní části práce budou stručně popsána pravidla a styl hry vzdušného
+ hokeje spolu s rozborem chování lidského protivníka při zápasech.
+ Následně budou popsány rozdílné řešení detekce pozice objektů využívané
+ v praxi.
+ 
+\end_layout
+
+\begin_layout Standard
+V praktické části bude z počátku nastíněna konstrukce realizovaného robotického
+ vzdušného hokeje (dále jen RVH), která byla hlavní náplní práce Dominika
+ Jaška 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-37"
+literal "false"
+
+\end_inset
+
+, v jehož spolupráci celá realizace vznikala.
+ V další kapitole bude stručně shrnuta implementace simulačního softwaru
+ hry umožňující vývoj a testovaní herních strategií v počátečních fází projektu
+ bez sestaveného RVH.
+ Následně budou navrženy čtyři herní strategie s rozdílným stylem hry, mezi
+ kterými bude možné během hry pomocí uživatelského rozhraní přepínat.
+ V předposlední kapitole bude přiblížena implementace detekce puku s pomocí
+ kamerového modulu z rodiny produktů Raspberry a knihovny opencv.
+ Na závěr bude stručně popsána implementace jednotlivých softwarových částí
+ na reálném RVH spolu s vytvořením grafického uživatelského rozhraní pro
+ snadné a přehledné ovládání prvků stolu.
+ Popis jednotlivých procedur bude z důvodu velké obsáhlosti velice zestručněn.
+ Pro plné pochopení implementace jednotlivých částí práce lze nahlédnout
+ do přiloženého zdrojového kódu.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage cleardoublepage
 \end_inset
 
@@ -357,9 +396,9 @@ Vzdušný hokej
 \end_layout
 
 \begin_layout Standard
-V postupu návrhu automatického hráče robotického vzdušného hokeje (dále
- jen RVH) je důležité zakládat na již zavedených a standardizovaných vlastnostec
-h klasického AirHockey (česky vzdušný hokej) zobrazeného na obrázku 
+V postupu návrhu automatického hráče RVH je důležité zakládat na již zavedených
+ a standardizovaných vlastnostech klasického AirHockey (česky vzdušný hokej)
+ zobrazeného na obrázku 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Profesionální-vzdušný-hokej"
@@ -399,7 +438,7 @@ name "fig:Profesionální-vzdušný-hokej"
 Profesionální vzdušný hokej využívaný na turnajích 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "key-1"
+key "instalace_opencv"
 literal "false"
 
 \end_inset
@@ -458,7 +497,7 @@ noprefix "false"
  je zakázáno překročit na stranu k soupeřovi 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "key-3"
+key "displej"
 literal "false"
 
 \end_inset
@@ -469,7 +508,7 @@ literal "false"
  kterýkoliv hráč 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "key-3"
+key "displej"
 literal "false"
 
 \end_inset
@@ -481,7 +520,7 @@ literal "false"
  branka 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "key-3"
+key "displej"
 literal "false"
 
 \end_inset
@@ -493,7 +532,7 @@ literal "false"
  V některých případech lze hrát i do devíti bodů 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "key-3"
+key "displej"
 literal "false"
 
 \end_inset
@@ -519,7 +558,7 @@ Standardní rozměry turnajového stolu vzdušného hokeje odpovídají americk�
  (78.74 cm) 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "key-2"
+key "instalace_kivy"
 literal "false"
 
 \end_inset
@@ -540,7 +579,7 @@ noprefix "false"
 ) 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "key-2"
+key "instalace_kivy"
 literal "false"
 
 \end_inset
@@ -580,7 +619,7 @@ Standardizované rozměry vzdušného hokeje s doporučenými rozměry místnost
  
 \begin_inset CommandInset citation
 LatexCommand cite
-key "key-2"
+key "instalace_kivy"
 literal "false"
 
 \end_inset
@@ -634,7 +673,7 @@ literal "false"
  při silnějších úderech 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "key-2"
+key "instalace_kivy"
 literal "false"
 
 \end_inset
@@ -1743,6 +1782,12 @@ Znázornění odrazu puku od pohybující se hokejky
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Detekce-pozice-objektů"
+
+\end_inset
+
 Detekce pozice objektů
 \end_layout
 
@@ -2723,15 +2768,602 @@ Konstrukce a hardware
 \end_layout
 
 \begin_layout Standard
-Brutálně vychváli Doma, kterej je hlavní šéf projektu a totální bombič.
+Konstrukce stolu a výběr většiny hardwarových prvků spolu s řízením motorů
+ byla hlavní náplň práce Dominika Jaška 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-37"
+literal "false"
+
+\end_inset
+
+ v jehož spolupráci byl celý RVH vyvíjen.
+ Tato práce se v této oblasti zabývala pouze výběrem vhodného hardwaru pro
+ detekci puku na herní ploše a řídící jednotky, na které celý řídící software
+ stolu spolu s detekcí obrazu a vyhodnocováním strategie hry běžel (viz
+ kapitoly 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Návrh-strategie"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Návrh-strategie"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Detekce-puku"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Detekce-puku"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ a 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Softwarová-implementace"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Softwarová-implementace"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ 
 \end_layout
 
 \begin_layout Standard
-(Nevim jestli takhle, někam to ale musím dat)
+V následující kapitole bude nastíněna výsledná podoba konstrukce a umístění
+ hardwarových prvků celého RVH spolu s popisem prvků souvisejících s detekcí
+ a softwarovou implementací softwaru RVH.
+ Pro podrobnější popis ostatních částí, konstrukce a elektrického zapojení
+ celého řešení lze nahlédnout do práce 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-37"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Konstrukce RVH
 \end_layout
 
 \begin_layout Standard
-Popsat raspberry pi, kameru, displej atak
+Návrh celé konstrukce prošel několika iteracemi jak při fázi modelování,
+ tak při samotném testování reálných částí.
+ Výsledná konstrukce stolu byla převážně vyrobena ze dřeva.
+ Menší prvky byly potom tištěny na 3D tiskárně.
+ Model výsledné verze vytvořený Dominikem Jaškem lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Model-konstrukce-RVH."
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/Air_hockey_2020 Overview_perspective.png
+	lyxscale 40
+	width 65line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Model-konstrukce-RVH."
+
+\end_inset
+
+Model konstrukce RVH.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Jednotlivé odkryté strany stolu zobrazující rozmístění hardwarových prvků
+ bez elektrického zapojení lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Pohledy-na-odkryté"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/Air_hockey_2020 Robot side 2.png
+	lyxscale 40
+	width 50line%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pictures/Air_hockey_2020 Human side.png
+	lyxscale 40
+	width 50line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Robotická strana 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+Strana lidského protihráče
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Pohledy-na-odkryté"
+
+\end_inset
+
+Pohledy na odkryté strany stolu.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Kamerový modul
+\end_layout
+
+\begin_layout Standard
+Po vypracování rešerše dostupných řešení detekce polohy objektů se jevilo
+ jako nejvhodnější využít integrovaný kamerový modul přímo od Raspberry.
+ Více informací o výhodách tohoto řešení a popisu dalších způsobů detekce
+ lze nalézt v kapitole 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Detekce-pozice-objektů"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Kvůli podpoře hardwarového 4x4 binningu
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Binning - hardwarové sdružování sousedních pixelů senzoru.
+\end_layout
+
+\end_inset
+
+ byl využit starší modul kamery V1.
+ Novější V2 modul podporoval pouze 2x2 binning.
+ To zapříčinilo ořezávání zorného pole při vyšších snímkovacích frekvencích.
+ I přes to bylo zapotřebí rozšířit zorné pole kamery výměnou původní čočky
+ za čočku s širším úhlem záběru.
+ Vybraná čočka Arducam 1/2.7" s ohniskovou vzdáleností 2.8 mm zvýšila zorné
+ pole horizontálního záběru z původních 53° na 75° a dovolila tak snímat
+ celou herní plochu s kamerou umístěnou pouze 80 cm nad rovinou snímání.
+ Úmístění kamery na konstrukci lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Konstrukce-uchycení-kamery"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/Air_hockey_2020 Camera2.png
+	lyxscale 40
+	width 60line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Konstrukce-uchycení-kamery"
+
+\end_inset
+
+Konstrukce uchycení kamery s vestavěným led osvětlením.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Řídící jednotka a displej
+\end_layout
+
+\begin_layout Standard
+Jako hlavní řídící jednotka byl z praktických a ekonomických důvodů vybrán
+ jednodeskový počítač Raspberry Pi 4B s dostatečným výkonem jak pro renderování
+ grafického rozhraní, tak pro rychlé zpracování snímků a evaluaci strategie
+ hry.
+ Operační systém Raspbian, který je na ARM procesory nacházející se na počítačíc
+h rodiny Raspberry vysoce optimalizovaný, dovoloval jednoduchou konfiguraci
+ a téměř počítač nezatěžoval.
+ K Raspberry byl navíc přimontován chladící kryt pro umožnění přetaktování
+ procesoru a grafického čipu (viz kapitola 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Přetaktování"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/armor.png
+	width 40line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Raspberry-Pi-4B"
+
+\end_inset
+
+ Raspberry Pi 4B s aktivním chladícím krytem.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+K Raspberry byl připojen kapacitní dotykový 7
+\begin_inset Quotes grd
+\end_inset
+
+ displej od firmy Waveshare s technologií IPS
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+IPS - technologie pro LCD displeje řešící nedostatky a omezení TN panelů
+ jako je malý pozorovací úhel nebo nekvalitní reprodukce barev.
+\end_layout
+
+\end_inset
+
+ a rozlišením 1024x600.
+ Dostatečně velká úhlopříčka zajišťovala přehlednou navigaci v uživatelském
+ rozhraní a dotyková plocha intuitivní způsob ovládání interaktivních prvků
+ prostředí.
+ Displej byl k počítači připojen přes speciální ohebný plochý HDMI kabel
+ pro grafický výstup a přes USB kabel pro napájení a přenos informace o
+ dotyku.
+ Displej lze vidět na obrázku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:7-displej-od"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pictures/displej.png
+	width 50line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:7-displej-od"
+
+\end_inset
+
+7
+\begin_inset Quotes grd
+\end_inset
+
+ displej od firmy Waveshare 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "displej"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3592,6 +4224,12 @@ Zpoždění informace o aktuální poloze vznikající na reálném systému zpr
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Návrh-strategie"
+
+\end_inset
+
 Návrh strategie
 \end_layout
 
@@ -5074,8 +5712,8 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Po spuštění algoritmu skrze uživatelské rozhraní program vyčká několik vteřin
- pro umožnění přiblížení puku ke kameře.
+Po spuštění algoritmu skrze uživatelské rozhraní (UI) program vyčká několik
+ vteřin pro umožnění přiblížení puku ke kameře.
  Poté je na částečný výřez vyfoceného snímku aplikován postup popsaný výše.
  Výsledná barva nejčetnějšího shluku je považována za hledanou barvu puku
  
@@ -5198,24 +5836,650 @@ Konfigurace Raspberry Pi 4B
 
 \begin_layout Standard
 Pro optimální běh řídícího softwaru RVH na mikropočítači Raspberry Pi bylo
- nutné provést několik konfiguračních procedur v systému počítače.
- Kromě 
+ nutné provést několik konfiguračních procedur v systému.
+\end_layout
+
+\begin_layout Subsubsection
+Instalace knihoven
 \end_layout
 
 \begin_layout Standard
-instalace knihoven
+Celý software využíval několik volně dostupných Python knihoven.
+ Seznam nejdůležitějších spolu s popisem funkce lze vidět v tabulce 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Seznam-používaných-knihoven"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-nastavení displeje
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="14" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Knihovna
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Účel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Instalace
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+kivy
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+tvorba uživatelského rozhraní
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pip + závislosti
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+opencv
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+zpracování snímků a detekce puku
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pip + závislosti
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pickle
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ukládání a načítání dat ze souborů
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+standard
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+numpy
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pokročilé matematické operace
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pip
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+threading
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+paralelizace procesů
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+standard
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pygame.math
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+matematika vektorů
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pip
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PIL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+export snímků do souboru
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pip
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+uuid
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+generování unikátních ID
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+standard
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+collections
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pokročilé datové struktury
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+standard
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+shutil
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+vytváření archívů
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+standard
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+picamera
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+správa kamerového modulu
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pip
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+random
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+generování náhodných čísel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+standard
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+imutils
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sběr snímků z kamery
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pip
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Seznam-používaných-knihoven"
+
+\end_inset
+
+Seznam používaných knihoven v rámci řídícího softwaru RVH.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-přetaktování
+Instalace většiny nestandardních knihoven probíhala přes správce Python
+ modulů PIP.
+ Některé obsáhlejší knihovny ale vyžadovaly instalaci dalších propojených
+ modulů.
+ Postup instalace knihovny 
+\emph on
+opencv 
+\emph default
+zajišťující zpracování obrazu a detekci puku na jednotlivých snímcích je
+ popsán v 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "instalace_opencv"
+literal "false"
+
+\end_inset
+
+.
+ Instalace knihovny 
+\emph on
+kivy
+\emph default
+ potom v 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "instalace_kivy"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Nastavení displeje
 \end_layout
 
 \begin_layout Standard
-start se spuštěním systému
+Využití neoficiálního displeje od firmy Waveshare s nestandardním rozlišením
+ 1024x600 zapříčinilo nekompatibilitu s řídící jednotkou.
+ Bylo nutné upravit několik souborů pro korektní zobrazení grafického výstupu
+ a správnou interpretaci dotykového ovládání.
+ Konstrukce stolu zároveň neumožňovala umístění displeje v původní orientaci,
+ proto bylo nutné obraz otočit o 180°.
+\end_layout
+
+\begin_layout Standard
+V souboru /boot/config.txt byly přidány následující řádky:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Konfigurace nestandardního rozlišení grafického výstupu Raspberry Pi.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+disable_overscan=1 
+\end_layout
+
+\begin_layout LyX-Code
+hdmi_cvt=1024 600 3 0 0 0
+\end_layout
+
+\begin_layout LyX-Code
+hdmi_group=2 
+\end_layout
+
+\begin_layout LyX-Code
+hdmi_mode=87
+\end_layout
+
+\end_inset
+
+Pro zajištění správné interpretace dotyků při otočeném výstupu bylo nutné
+ postupovat podle 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rotate_lcd"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Přetaktování"
+
+\end_inset
+
+Přetaktování
+\end_layout
+
+\begin_layout Standard
+Raspberry Pi model 4B obsahuje dostatečně silný hardware pro plynulou navigaci
+ v uživatelském rozhraní a rychlou a spolehlivou detekci puku.
+ I tak ale bylo pro co nejvyšší výkon odemčeno přetaktování procesoru a
+ grafického čipu.
+ Maximální frekvence procesoru se tak díky přetaktování zvýšila o 30 % a
+ frekvence grafického čipu pak přibližně o 25 %.
+\end_layout
+
+\begin_layout Standard
+Samotný postup přetaktování procesoru a grafického čipu Raspberry Pi byl
+ velice jednoduchý.
+ Po aktualizování firmwaru na nejnovější experimentální verzi pak stačilo
+ na konec souboru /boot/config.txt dopsat následující řádky:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Přetaktování procesoru a grafického čipu Raspberry pi.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+over_voltage=6 
+\end_layout
+
+\begin_layout LyX-Code
+arm_freq=2000
+\end_layout
+
+\begin_layout LyX-Code
+gpu_freq=750
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pro zajištění stabilního běhu systému bylo nutné navýšit napájecí napětí
+ procesoru.
+ Bez zajištění odvodu tepla ale hrozilo přehřívání čipu, proto byl nainstalován
+ kovový chladič s aktivním odvodem tepla ve formě malých ventilátorů připojených
+ na napájecí piny Rapsberry Pie.
 \end_layout
 
 \begin_layout Standard
@@ -5448,8 +6712,9 @@ Uživatelské rozhraní
 \end_layout
 
 \begin_layout Standard
-Uživatelské rozhraní zajišťující grafický výstup stavů RVH a možnost interakce
- s ovládacími prvky vznikalo za pomocí python knihovny 
+Uživatelské rozhraní, nebo také UI, zajišťující grafický výstup stavů RVH
+ a možnost interakce s ovládacími prvky vznikalo za pomocí python knihovny
+ 
 \emph on
 Kivy, 
 \emph default
@@ -6145,6 +7410,10 @@ Informační panel uživatelského rozhraní.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+Dodatečné funkce
 \end_layout
 
 \begin_layout Standard
@@ -7659,6 +8928,38 @@ Alsalihi, A.; Najjar, K.; Van Scoy, B.; Zifer, J.
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
+key "vymena_cocky"
+literal "false"
+
+\end_inset
+
+Camera Module Lens Modifcation [online].
+ In: .
+ [cit.
+ 2020-06-14].
+ Dostupné z: http://wiki.raspberrytorte.com/index.php?title=Camera_Module_Lens_Modi
+fcation
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "displej"
+literal "false"
+
+\end_inset
+
+Waveshare 7" dotykový LCD (H) displej.
+ In: Rpishop [online].
+ [cit.
+ 2020-06-14].
+ Dostupné z: https://rpishop.cz/displeje/1476-waveshare-7-dotykovy-lcd-h-displej-
+1024x600-ips-kapacitni-hdmi-bez-krabicky.html
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
 key "kivy_guide"
 literal "false"
 
@@ -7686,6 +8987,55 @@ JAŠEK, Dominik.
  Vysoké učení technické v Brně, Fakulta strojního inženýrství, Ústav automatizac
 e a informatiky.
  Vedoucí práce Radomil Matoušek.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "instalace_opencv"
+literal "false"
+
+\end_inset
+
+ROSEBROCK, Adrian.
+ Install OpenCV 4 on Raspberry Pi 4 and Raspbian Buster.
+ In: PyImageSearch [online].
+ September 16, 2019 [cit.
+ 2020-06-13].
+ Dostupné z: https://www.pyimagesearch.com/2019/09/16/install-opencv-4-on-raspberr
+y-pi-4-and-raspbian-buster/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "instalace_kivy"
+literal "false"
+
+\end_inset
+
+Installation on Raspberry Pi.
+ In: Kivy [online].
+ [cit.
+ 2020-06-13].
+ Dostupné z: https://kivy.org/doc/stable/installation/installation-rpi.html
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "rotate_lcd"
+literal "false"
+
+\end_inset
+
+Touch Rotating for WS Capacitive LCD.
+ In: YouTube [online].
+ 18.
+ 1.
+ 2018 [cit.
+ 2020-06-14].
+ Dostupné z: https://www.youtube.com/watch?v=6PSspIiLfAI
 \end_layout
 
 \end_body
