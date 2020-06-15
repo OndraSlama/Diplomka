@@ -210,20 +210,78 @@ pdfbookmark[1]{Zadání}{zadani}
 
 \end_layout
 
-\begin_layout Standard
-<abstrakt>
+\begin_layout Section*
+ABSTARKT
 \end_layout
 
 \begin_layout Standard
-<abstrakt en>
+Cílem diplomové práce je ve spolupráci s prací Dominika Jaška 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-37"
+literal "false"
+
+\end_inset
+
+ realizovat řešení robotického vzdušného hokeje.
+ Konkrétně se práce zabývá implementací simulačního softwaru modelující
+ chování reálného robotického vzdušného hokeje, návrhem strategie hry robota
+ a detekcí polohy puku na herní ploše.
+ Práce byla navíc rozšířena o integraci vytvořených softwarových modulů
+ pod řídící aplikaci a vytvoření uživatelského rozhraní pro ovládání a správu
+ veškerých funkcionalit stolu skrze dotykový displej.
+\end_layout
+
+\begin_layout Section*
+ABSTRACT
 \end_layout
 
 \begin_layout Standard
-<klíčová slova>
+The aim of this diploma thesis is to implement a robotic air hockey table
+ in cooperation with the work of Dominik Jašek [37] .
+ Specifically, the work deals with the implementation of simulation software
+ that models the behavior of said robotic air hockey table, designing a
+ game strategy for the robot and detecting position of a puck situated on
+ the playing field.
+ In addition, the work was extended by integrating those software modules
+ under one control application and creating a user interface for controlling
+ and managing all the functionalities of the table through a capacitive
+ touch screen.
+ #zgoogluzatim
+\end_layout
+
+\begin_layout Section*
+KLÍČOVÁ SLOVA
 \end_layout
 
 \begin_layout Standard
-<klíčová slova en>
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Hovno prdel sračka, to je Radka značka
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+KEYWORDS
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Shit ass shit, that's Radek's brand
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -256,6 +314,20 @@ pdfbookmark[1]{Zadání}{zadani}
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Prohlašuji, že pan docent Matoušek dokurvil co mohl a výrazně zkomplikoval
+ celý proces realizace robotického vzdušného hokeje.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage cleardoublepage
 \end_inset
 
@@ -271,6 +343,20 @@ pdfbookmark[1]{Zadání}{zadani}
 \end_inset
 
 <poděkování>
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+neděkuji hlavně Radku Matouškovi za jeho absolutní nic nedělání ve všech
+ fázích vývoje robotického vzdušného hokeje.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -333,8 +419,8 @@ pagestyle{fancy}
 \end_layout
 
 \begin_layout Standard
-Oblíbená arkádová hra vzdušný hokej vznikla jako variace stolního hokeje
- již v roce 1972.
+Oblíbená arkádová stolní hra vzdušný hokej vznikla jako variace stolního
+ hokeje již v roce 1972.
  Hra je určená pro dva hráče, kteří se pomocí speciálních hokejek snaží
  trefit puk, pohybující se po herní desce do soupeřovi brány.
  Díky ventilátorům tlačící vzduch z pod děrované desky se pod herním pukem
@@ -358,8 +444,9 @@ Práce se zabývá simulační realizací hry spolu s návrhem strategie, detekc
 \end_layout
 
 \begin_layout Standard
-V praktické části bude nastíněna konstrukce realizovaného robotického vzdušného
- hokeje (dále jen RVH), která byla hlavní náplní práce Dominika Jaška 
+V praktické části bude z počátku nastíněna konstrukce realizovaného robotického
+ vzdušného hokeje (dále jen RVH), která byla hlavní náplní práce Dominika
+ Jaška 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "key-37"
@@ -369,15 +456,16 @@ literal "false"
 
 , v jehož spolupráci celá realizace vznikala.
  V další kapitole bude stručně shrnuta implementace simulačního softwaru
- hry umožňující vývoj a testovaní herních strategií v počátečních fázi projektu
+ hry umožňující vývoj a testovaní herních strategií v počátečních fází projektu
  bez sestaveného RVH.
- Následně budou navrženy čtyři herní strategie s rozdílným stylem hry.
- V předposlední kapitole bude přiblížena implementace detekce puku s pomocí
+ Následně budou navrženy čtyři herní strategie s rozdílným stylem hry, mezi
+ kterými bude možné během hry pomocí uživatelského rozhraní přepínat.
+ V předposlední kapitole bude přiblížena implementace detekce puku pomocí
  kamerového modulu z rodiny produktů Raspberry a knihovny opencv.
  Na závěr bude stručně popsána implementace jednotlivých softwarových částí
  na reálném RVH spolu s vytvořením grafického uživatelského rozhraní pro
- snadné a přehledné ovládání prvků stolu.
- Popis jednotlivých procedur bude z důvodu velké obsáhlosti velice zestručněn.
+ snadné a přehledné ovládání funkcionalit stolu.
+ Popis jednotlivých procedur bude z důvodu velké obsáhlosti zestručněn.
  Pro plné pochopení implementace jednotlivých částí práce lze nahlédnout
  do přiloženého zdrojového kódu.
 \end_layout
@@ -8206,15 +8294,142 @@ Závěr
 \end_layout
 
 \begin_layout Standard
-Závěr ke každému k cílů
+V rámci diplomové práce byl navržen a implementován simulační software,
+ který byl následně využit pro návrh celkem čtyř typů strategií hry RVH.
+ Zároveň byla řešena detekce polohy puku na hrací ploše a vyhodnocení jeho
+ pohybu.
+ Práce byla rozšířena o nepovinnou část zabývající se softwarovou implementací
+ RVH spolu s vytvořením uživatelského rozhraní pro ovládání stolu přes dotykový
+ displej.
+ Celý projekt byl realizován ve spolupráci s Dominikem Jaškem, jehož práce
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-37"
+literal "false"
+
+\end_inset
+
+ se zabývala konstrukčním řešením RVH a řízením pohonů pomocí mikroprocesoru
+ Arduino Micro.
 \end_layout
 
 \begin_layout Standard
-Porovnání skore strategii
+V teoretické části práce byla popsána hra vzdušný hokej spolu s rešerší
+ stylů hry profesionálních hráčů a analýzou chování člověka při rychlých
+ změnách puku.
+ Tyto znalosti pak byly využity při návrhu strategie robotického hráče.
+ Zároveň byly konzultovány různé řešení detekce polohy objektů v průmyslu.
+ Jako nejvhodnější se v daných podmínkách jevila kombinace kamerového modulu
+ z rodiny produktů Raspbery verze 1.3 pro snímání plochy a jednodeskového
+ počítače Raspberry Pi pro zpracování snímků.
 \end_layout
 
 \begin_layout Standard
-Spolupráce s Domem
+Úvodem praktické části bylo shrnutí výsledné konstrukce RVH navržené Dominikem
+ Jaškem.
+ Online model konstrukce vytvořené v modelovacím softwaru Fusion 360 lze
+ prohlížet na odkazu 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "model"
+literal "false"
+
+\end_inset
+
+.
+ Fotky výsledné konstrukce lze nalézt v příloze 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ODKAZ NA přílohu
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Pro možnost paralelního vývoje strategie hry spolu s realizací RVH byl vytvořen
+ simulační software v jazyce Python (stejně jako veškeré ostatní softwarové
+ moduly), který modeloval chování reálného stolu.
+ Kromě modelování fyziky pohybu puku po hřišti a snímání plochy simulovanou
+ kamerou s dodanou nepřesností bylo také umožněno s probíhající simulací
+ interagovat, čímž byla zajištěna možnost testování libovolných situací
+ hry.
+ Simulační software byl v průběhu vývoje RVH upravován aby co nejlépe modeloval
+ výsledný systém a zajišťoval potřebné funkce pro efektivní testování.
+\end_layout
+
+\begin_layout Standard
+S využitím simulačního softwaru byly navrženy celkově čtyři různé strategie
+ s rozdílným stylem hry.
+ Strategie A vykazovala pouze základní herní taktiky.
+ Strategie B umožňovala předvídat polohu puku v určitém čase a pomocí této
+ informace efektivně rozhodovat o žádané poloze hokejky.
+ Staregie C vznikala jako rozšíření strategie B a vynikala v přesných a
+ rychlých střelách na bránu.
+ Strategie D pak vznikala jako poslední a kombinovala nejlepší vlastnosti
+ ze všech ostatních.
+ Kromě toho také vykazovala při rozhodování prvky náhody pro zmatení lidského
+ protihráče.
+\end_layout
+
+\begin_layout Standard
+Snímání herní plochy bylo zajištěno Raspberry kamerovým modulem V1.3 se speciální
+ čočkou Arducam 1/2.7" s ohniskovou vzdáleností 2.8 mm pro větší zorný úhel.
+ Ta byla umístěna na kamerové konstrukci 80 cm nad rovinou hřiště.
+ Zpracovávání a detekce polohy puku na snímcích potom probíhalo na Raspberry
+ Pi s využitím knihoven 
+\emph on
+opencv 
+\emph default
+a 
+\emph on
+numpy.
+ 
+\emph default
+Po optimalizaci algoritmů detekce zvládal Raspberry Pi snímat a zpracovat
+ přibližně 70 snímků za vteřinu s rozlišením 320x192, což se pro účely strategie
+ jevilo jako dostatečně přesné a rychlé.
+\end_layout
+
+\begin_layout Standard
+V neposlední řadě byly všechny softwarové části integrovány pod řídící aplikaci
+ s vytvořeným uživatelským rozhraním (UI) sloužící k ovládání stolu a nastavován
+í parametrů RVH.
+ Ta byla implementována pomocí knihovny 
+\emph on
+kivy 
+\emph default
+zaměřující se na tvorbu intuitivních a moderně vypadajících aplikací v jazyce
+ Python s podporou dotykového ovládání.
+ Rozvržení a design UI vznikal od základu speciálně pro RVH pro přehlednou
+ navigaci a unikátní vzhled bez využívání předpřipravených šablon.
+ Zároveň byla vyřešena komunikace mezi Raspberry Pi a Arduinem, které spravovalo
+ většinu hardwarových prvků stolu.
+\end_layout
+
+\begin_layout Standard
+Vzhledem k rozsáhlosti projektu a provázanosti témat s prací Dominika Jaška
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-37"
+literal "false"
+
+\end_inset
+
+ byla nutná neustálá spolupráce a vzájemná výpomoc.
+ Celý projekt prošel ve všech oblastech vývoje několika iteracemi, ale z
+ důvodu obsáhlosti popisu byl stručně popsán pouze výsledný produkt.
+ Pro podrobnější informace ohledně vytvořených softwarových modulů lze nahlédnou
+t do přiloženého zdrojového kódu.
+ Pro náhled výsledné konstrukce lze potom konzultovat vytvořený model nebo
+ nahlédnout do příloh práce.
 \end_layout
 
 \begin_layout Standard
@@ -9034,6 +9249,22 @@ Touch Rotating for WS Capacitive LCD.
  2018 [cit.
  2020-06-14].
  Dostupné z: https://www.youtube.com/watch?v=6PSspIiLfAI
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "model"
+literal "false"
+
+\end_inset
+
+JAŠEK, Dominik.
+ Online model robotického Air hockey.
+ [online].
+ [cit.
+ 2020-06-12].
+ Dostupné z: https://a360.co/2I2ok0s
 \end_layout
 
 \end_body
